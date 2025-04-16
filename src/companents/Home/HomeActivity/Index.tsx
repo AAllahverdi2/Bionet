@@ -3,9 +3,9 @@ import '../../../assets/css/style.css';
 
 const Index = () => {
   return (
-    <>
+    <section  className='activity_all'>
       <h2 className="activities__title">Fəaliyyətimiz</h2>
-      <section className="activities">
+      <section className="activities container">
         <div className="activities__wrapper">
           <div className="activities__left">
             <h3 className="activities__heading">Xidmətlərimizdən yararlanın</h3>
@@ -38,7 +38,7 @@ const Index = () => {
           </div>
         </div>
       </section>
-    </>
+    </section>
   );
 };
 

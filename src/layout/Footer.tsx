@@ -1,10 +1,11 @@
 import React from 'react';
 import '../assets/css/style.css';
-import { FaFacebookF, FaInstagram, FaYoutube, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
-import instagram from '../assets/image/Capa 2.png'
-import facebook from '../assets/image/Logo 2.png'
-// import instagram from '../assets/image/Capa 2.png'
+import card1 from '../assets/image/Logo 2.png'
+import card2 from '../assets/image/Vector.png'
+import card3 from '../assets/image/Capa 2.png'
 import logo from '../assets/image/logo.png'
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
+
 const Footer = () => {
   return (
     <footer className="footer">
@@ -14,10 +15,10 @@ const Footer = () => {
         </div>
 
         <div className="footer__links">
-          <div>
+          <div className='footer_linkss'>
             <h4>Layihələr</h4>
             <ul>
-              <li><a href="#">Layihələr</a></li>
+              <li><a href="/projects">Layihələr</a></li>
               <li><a href="#">Son layihələrimiz</a></li>
               <li><a href="#">Partnyorlar</a></li>
             </ul>
@@ -26,8 +27,8 @@ const Footer = () => {
           <div>
             <h4>Xidmətlər</h4>
             <ul>
-              <li><a href="#">Veb saytlar</a></li>
-              <li><a href="#">Mobil tətbiqlər</a></li>
+              <li><a href="/vebproject">Veb saytlar</a></li>
+              <li><a href="/mobileprojects">Mobil tətbiqlər</a></li>
               <li><a href="#">Bazar araşdırması</a></li>
             </ul>
           </div>
@@ -36,8 +37,8 @@ const Footer = () => {
             <h4>Haqqımızda</h4>
             <ul>
               <li><a href="#">Komandamız</a></li>
-              <li><a href="#">Şirkət haqqında</a></li>
-              <li><a href="#">Bloqlar</a></li>
+              <li><a href="/about">Şirkət haqqında</a></li>
+              <li><a href="/projects">Bloqlar</a></li>
             </ul>
           </div>
 
@@ -55,7 +56,9 @@ const Footer = () => {
       </div>
       <div className="footer__middle">
       <div className="footer__socials">
-         
+          <img src={card1} alt="" />
+          <img src={card2} alt="" />
+          <img src={card3} alt="" />
         </div>
       </div>
 

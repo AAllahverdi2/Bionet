@@ -1,31 +1,25 @@
-@charset "UTF-8";
-/* Ümumi stil */
 .header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 16px 10px;
   background-color: #fff;
   gap: 66px;
   top: 124px;
   flex-wrap: nowrap;
-  /* Bütün elementlər bir sətirdə qalacaq */
   width: 100%;
 }
 
-/* Sol tərəf */
 .header__left {
   display: flex;
   align-items: center;
   gap: 60px;
 }
 
-/* Logo */
 .header__logo {
   height: 65.17px;
 }
 
-/* Navigasiya */
 .header__nav {
   display: flex;
   gap: 60px;
@@ -42,14 +36,12 @@
   color: #007aff;
 }
 
-/* Sağ tərəf */
 .header__right {
   display: flex;
   align-items: center;
   gap: 44px;
 }
 
-/* Axtarış düyməsi */
 .header__search {
   background: none;
   border: none;
@@ -57,13 +49,11 @@
   cursor: pointer;
 }
 
-/* Dil seçimi */
 .header__lang {
   font-size: 14px;
   color: #333;
 }
 
-/* "Bizə Yazın" düyməsi */
 .header__contact {
   background-color: #38A1FF;
   color: white;
@@ -72,6 +62,7 @@
   width: 176px;
   height: 56px;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .offcanvasForResponse {
@@ -82,57 +73,41 @@
   background-color: #1976d2;
 }
 
-/* Responsivlik: 1115px və aşağı cihazlar */
 @media (max-width: 1115px) {
   .header {
     gap: 30px;
-    /* Gapı azaldırıq */
     padding: 16px 10px;
-    /* Paddinglər azaldılır */
   }
   .header__left {
     gap: 30px;
-    /* Sol tərəfdəki boşluğu azaldırıq */
   }
   .header__right {
     gap: 20px;
-    /* Sağ tərəfdəki boşluğu azaldırıq */
   }
   .header__logo {
     height: 50px;
-    /* Logo ölçüsünü azaldırıq */
   }
   .header__nav a {
     font-size: 14px;
     padding: 0px;
-    /* Navigasiya font ölçüsünü kiçildirik */
   }
   .header__search {
     font-size: 16px;
-    /* Axtarış düyməsinin font ölçüsünü azaldırıq */
   }
   .header__contact {
     max-width: 150px;
-    /* "Bizə Yazın" düyməsinin enini azaldırıq */
     height: 48px;
-    /* Hündürlüyü azaldırıq */
   }
 }
-/* Responsivlik: 768px və aşağı cihazlar */
 @media (max-width: 768px) {
   .header {
-    /* Tərəflər alt-üst olacaq */
     gap: 20px;
-    /* Aralıqlar azaldılır */
     padding: 10px 5px;
-    /* Paddinglər daha kiçik edilir */
   }
   .header__left {
     gap: 20px;
-    /* Sol tərəfdəki boşluğu azaldırıq */
   }
   .header__nav {
-    /* Linklər alt-alta düzüləcək */
     gap: 10px;
   }
   .header__right {
@@ -140,31 +115,23 @@
   }
   .header__contact {
     width: 100%;
-    /* Buton eni 100% olacaq */
     height: 50px;
-    /* Buton hündürlüyü artırılacaq */
     font-size: 14px;
   }
   .header__logo {
     height: 50px;
-    /* Logo ölçüsünü balacalaşdırırıq */
   }
   .header__nav a {
     font-size: 12px;
-    /* Navigasiya yazısı daha kiçik olacaq */
   }
   .header__search {
     font-size: 14px;
-    /* Axtarış düyməsinin ölçüsü balacalaşacaq */
   }
 }
-/* Responsivlik: 600px və aşağı cihazlar */
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .header {
     gap: 10px;
-    /* Daha da azaldırıq */
     padding: 5px 5px;
-    /* Daha kiçik padding */
     display: flex;
     justify-content: space-around !important;
   }
@@ -198,24 +165,19 @@
   }
   .header__logo {
     height: 45px;
-    /* Logo daha da kiçildirilir */
   }
   .header__contact {
     display: none;
   }
   .header__nav a {
     font-size: 11px;
-    /* Linklər daha da balacalaşır */
   }
   .header__search {
     font-size: 12px;
-    /* Axtarış düyməsi daha balaca olur */
   }
   .header__contact {
     font-size: 12px;
-    /* Butonun fontu kiçilir */
     height: 45px;
-    /* Hündürlük daha da kiçilir */
   }
 }
 .hero {
@@ -297,6 +259,7 @@
 .services {
   padding: 60px 20px;
   text-align: center;
+  margin-top: 20px;
 }
 .services__top {
   margin-bottom: 40px;
@@ -312,6 +275,7 @@
   max-width: 850px;
   margin: 0 auto;
   line-height: 1.6;
+  padding: 20px;
 }
 .services__cards {
   display: flex;
@@ -380,7 +344,7 @@
   transform: skewX(-10deg);
 }
 
-@media only screen and (max-width: 1430px) {
+@media only screen and (max-width: 1440px) {
   .card {
     max-width: 31%;
   }
@@ -408,26 +372,30 @@
   font-weight: 700;
   color: #333;
   margin-top: 60px;
-  margin-bottom: 20px;
+  padding-bottom: 40px;
 }
 
 .activities {
   background-color: #008B85;
   padding: 60px 20px;
   color: #fff;
+  min-height: 412px;
+  margin-bottom: 30px;
 }
 .activities__wrapper {
-  max-width: 1100px;
   margin: 0 auto;
   display: flex;
   gap: 40px;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  padding: 20px;
 }
 .activities__left {
   flex: 1;
   min-width: 300px;
+  padding: 20px;
+  margin-bottom: 20px;
 }
 .activities__left h3 {
   font-size: 24px;
@@ -440,19 +408,21 @@
   margin-bottom: 16px;
   color: #e6f7f7;
   max-width: 480px;
-  /* ✅ daha dar görünsün deyə əlavə olundu */
 }
 .activities__right {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(2, 0fr);
+  gap: 30px;
   flex: 1;
   min-width: 380px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .stat-box {
-  width: 200px;
-  height: 130px;
+  width: 250px;
+  height: 150px;
   padding: 20px;
   border-radius: 10px;
   color: #fff;
@@ -462,6 +432,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: #4a70b2;
 }
 .stat-box span {
   display: block;
@@ -484,71 +455,55 @@
   background-color: #f7931e;
 }
 
-@media (max-width: 880px) {
+@media (max-width: 1160px) {
   .activities__wrapper {
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 20px;
+    padding: 10px;
   }
   .activities__left {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     min-width: 100%;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 5px;
-  }
-  .activities__left p {
-    text-align: center !important;
-    width: 100% !important;
+    padding: 10px;
   }
   .activities__right {
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 20px;
     width: 100%;
   }
   .stat-box {
     width: 100%;
     height: auto;
-    padding: 10px;
-    font-size: 14px;
-  }
-  .header__logo {
-    height: 50px;
-  }
-  .header__nav a {
-    font-size: 12px;
-  }
-  .header__search {
-    font-size: 14px;
-  }
-  .header__contact {
-    width: 100%;
-    height: 50px;
-    font-size: 14px;
+    padding: 15px;
+    font-size: 16px;
   }
 }
 @media (max-width: 600px) {
   .activities__wrapper {
     flex-direction: column;
     align-items: flex-start;
-    gap: 5px;
+    gap: 10px;
+    padding: 5px;
   }
   .activities__left {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     min-width: 100%;
   }
   .activities__right {
     grid-template-columns: 1fr;
-    gap: 5px;
+    gap: 10px;
   }
   .stat-box {
     width: 100%;
     height: auto;
-    padding: 5px;
-    font-size: 12px;
+    padding: 10px;
+    font-size: 14px;
   }
   .header__logo {
     height: 40px;
@@ -602,6 +557,7 @@
   color: #333;
   margin-bottom: 40px;
   text-align: center;
+  padding: 35px;
 }
 .web-dev__wrapper {
   background-color: #F2F5F7;
@@ -732,12 +688,14 @@
   font-weight: 600;
   margin-bottom: 1.5rem;
   color: #333;
+  padding: 30px;
 }
 .product-tabs__buttons {
   display: flex;
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
+  padding-bottom: 30px;
 }
 .product-tabs__button {
   padding: 0.75rem 1.5rem;
@@ -757,22 +715,55 @@
 .swiper {
   width: 100%;
   height: 100%;
+  position: relative;
 }
 
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
+.swiper-button-next,
+.swiper-button-prev {
+  background: white;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.swiper-button-next {
+  right: 100px;
+}
+
+.swiper-button-prev {
+  left: 10px;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.products-tabs-bottom-right {
+  position: relative;
+  background-color: #bde0ff;
+  padding: 2rem;
+  border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.swiper {
+  max-width: 500px;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .products-tabs-bottom {
@@ -968,8 +959,9 @@
 }
 .footer__socials {
   display: flex;
-  gap: 1rem;
+  gap: 3rem;
   margin-top: 1.5rem;
+  padding: 3px;
 }
 .footer__socials svg {
   font-size: 20px;
@@ -987,6 +979,18 @@
   font-size: 14px;
 }
 
+@media only screen and (max-width: 600px) {
+  .footer__links {
+    display: flex;
+    justify-content: center;
+    align-items: center !important;
+  }
+  .footer__top {
+    display: flex;
+    justify-content: center;
+    align-items: center !important;
+  }
+}
 .services-hero-all {
   display: flex;
   flex-direction: column;
@@ -1141,6 +1145,7 @@
   font-family: "Arial", sans-serif;
   background-color: #f9f9f9;
   padding-bottom: 100px;
+  margin-top: 50px;
 }
 
 .contact-header-all {
@@ -1230,6 +1235,10 @@
 }
 .contact-form button:hover {
   background-color: #00cda2;
+}
+
+.contact_smedia_all {
+  margin-top: 6px;
 }
 
 .contact-info {
@@ -1466,7 +1475,7 @@
   padding: 20px;
   z-index: 5;
   min-height: 240px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .about-item {
@@ -1546,7 +1555,7 @@
     padding: 20px;
     z-index: 5;
     min-height: 240px;
-    border-radius: 10px;
+    border-radius: 5px;
   }
 }
 @media only screen and (max-width: 460px) {

@@ -21,7 +21,7 @@
 
     &__links {
         display: flex;
-        gap: 5rem; // ARTIQ ARALIQ BURADA
+        gap: 5rem;
         flex-wrap: wrap;
         padding-left: 1rem;
 
@@ -64,8 +64,9 @@
 
     &__socials {
         display: flex;
-        gap: 1rem;
+        gap: 3rem;
         margin-top: 1.5rem;
+        padding: 3px;
 
         svg {
             font-size: 20px;
@@ -85,4 +86,17 @@
         text-align: center;
         font-size: 14px;
     }
+}
+
+@media only screen and (max-width: 600px) {
+   .footer__links{
+    display: flex;
+    justify-content: center;
+    align-items: center !important;
+   }
+   .footer__top{
+display: flex;
+justify-content: center;
+align-items: center !important;
+} 
 }
