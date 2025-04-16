@@ -6,7 +6,7 @@ import image2 from '../../../assets/image/image21.png'
 import image3 from '../../../assets/image/image22.png'
 const Index = () => {
     return (
-        <div className='about-second-container'>
+        <div className='about-second-container container'>
             <div className="about-second-all">
                 <div className="about-second-left">
                     <h2>

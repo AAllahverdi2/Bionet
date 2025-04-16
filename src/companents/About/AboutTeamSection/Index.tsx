@@ -6,7 +6,7 @@ import teamMember2 from '../../../assets/image/ellipse2.png'; // Şəkil yolu
 const Index = () => {
     return (
         <section className='team-all'>
-            <div className="team-container">
+            <div className="team-container container">
                 <div className="team-header">
                     <h2>Komandamız</h2>
                     <p>

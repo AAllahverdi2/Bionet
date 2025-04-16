@@ -15,15 +15,15 @@
     &__desc {
         font-size: 15px;
         color: #555;
-        max-width: 750px;
+        max-width: 850px;
         margin: 0 auto;
         line-height: 1.6;
     }
 
     &__cards {
         display: flex;
-        justify-content: center;
-        gap: 30px;
+        justify-content: space-between;
+        gap: 10px;
         flex-wrap: wrap;
     }
 }
@@ -32,7 +32,7 @@
     background-color: #fff;
     border-radius: 20px;
     padding: 30px 20px;
-    max-width: 320px;
+    max-width: 420px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     position: relative;
     text-align: left;
@@ -74,7 +74,7 @@
         height: 20px;
         border-radius: 0 0 12px 12px;
         z-index: -1;
-        transform: skewX(-6deg); 
+        transform: skewX(-6deg);
     }
 
     &.green::after {
@@ -85,13 +85,40 @@
 
     &.lightgreen::after {
         background-color: #a1f09a;
-        height: 25px; 
-        transform: skewX(-8deg); 
+        height: 25px;
+        transform: skewX(-8deg);
     }
 
     &.blue::after {
         background-color: #3aabff;
-        height: 30px; 
-        transform: skewX(-10deg); 
+        height: 30px;
+        transform: skewX(-10deg);
+    }
+}
+
+
+@media only screen and (max-width: 1430px) {
+    .card {
+        max-width: 31%;
+    }
+}
+
+@media only screen and (max-width: 830px) {
+    .services__cards {
+        flex-direction: column;
+        max-width: 100%;
+        gap: 20px !important;
+    }
+
+    .card {
+        width: 100%;
+        flex-grow: 1;
+        flex-shrink: 1;
+        max-width: 100% !important;
+    }
+
+    .lightgreen {
+        width: 100%;
+        max-width: 100% !important;
     }
 }

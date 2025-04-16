@@ -21,7 +21,7 @@ const Index = () => {
     const [activeTab, setActiveTab] = useState(0);
 
     return (
-        <div className="product-tabs">
+        <div className="product-tabs container">
             <h2 className="product-tabs__title">Məhsullarımız</h2>
             <div className="product-tabs__buttons">
                 {tabs.map((tab, index) => (

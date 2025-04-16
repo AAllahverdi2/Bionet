@@ -4,7 +4,7 @@
     text-align: center;
   
     &__container {
-      max-width: 1140px;
+      max-width: 1680px;
       margin: 0 auto;
       border-radius: 10px;
       padding: 20px 20px;
@@ -47,8 +47,9 @@
   }
   
   .partners {
-    max-width: 1140px;
+    // max-width: 1140px;
     margin: 0 auto;
+    // border: 3px solid green;
   
     &__title {
       font-size: 28px;

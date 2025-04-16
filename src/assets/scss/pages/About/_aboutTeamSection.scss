@@ -6,7 +6,9 @@
     gap: 30px;
     max-width: 1300px;
     margin: 0 auto; 
-    margin-top: 100px;
+    margin-top: 70px !important;
+    // min-height: 40vh !important;
+padding-bottom: 50px !important;
     .team-header {
         margin-bottom: 50px;
 
@@ -33,7 +35,7 @@
         padding: 30px;
         position: relative;
         text-align: center;
-        flex-wrap: wrap; 
+        // flex-wrap: wrap; 
         max-height: 200px;
     }
 
@@ -76,3 +78,58 @@
         }
     }
 }
+
+
+@media only screen and (max-width: 1000px) {
+   .team-members{
+    max-width: 600px;
+   }
+  }
+@media only screen and (max-width: 870px) {
+    .team-container{
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        padding: 0px;
+        margin: 0px;
+        min-height: 100vh !important;
+    }
+    .team-header{
+        max-width: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        p{
+            max-width: 100% !important;
+            width: 100%;
+        }
+    }
+  }
+
+  
+  @media only screen and (max-width: 660px) {
+    .team-members {
+        display: flex;
+        flex-direction: column;
+        max-height: 100% !important;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .team-member {
+        min-height: 250px !important;
+        display: flex;
+        flex-direction: column;
+        align-items: start !important;
+        border-radius: 10px;
+    }
+    .member-photo{
+        display: flex;
+        justify-content: start;
+        align-items: start;
+    }
+
+   
+}
+

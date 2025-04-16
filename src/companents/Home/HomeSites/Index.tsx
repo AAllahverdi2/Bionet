@@ -6,7 +6,7 @@ import card3 from '../../../assets/image/image17.png'
 const Index = () => {
     return (
         <section className='web-all'>
-            <div className="web-dev">
+            <div className="web-dev container">
                 <h2 className="web-dev__title">Vebsaytların hazırlanması</h2>
                 <div className="web-dev__wrapper">
                     <div className="web-dev__step">

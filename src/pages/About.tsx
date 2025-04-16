@@ -7,7 +7,7 @@ const About = () => {
     <div>
       <AboutHerosection/>
       <AboutSecondsection/>
-      {/* <AboutTeamSection/> */}
+      <AboutTeamSection/>
       
       
     </div>
