@@ -13,7 +13,7 @@
     }
 
     .subtitle {
-        max-width: 600px; 
+        max-width: 600px;
         margin: 0 auto;
         font-size: 14px;
         color: #3e3e3e;
@@ -33,23 +33,61 @@
         gap: 20px;
         width: 100%;
 
-        .input {
+        .input-field {
             flex: 1;
-            padding: 12px 15px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 14px;
+            position: relative;
+            margin-bottom: 20px;
+
+            label {
+                position: absolute;
+                top: 50%;
+                left: 15px;
+                transform: translateY(-50%);
+                font-size: 14px;
+                color: black;
+                font-weight: bold;
+                pointer-events: none;
+                transition: 0.3s ease;
+            }
+
+            .input {
+                width: 100%;
+                padding: 12px 15px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                font-size: 14px;
+                height: 50px; /* Eyni hündürlükdə olması üçün */
+                outline: none;
+                position: relative;
+                background: #fff;
+
+                &:focus {
+                    border-color: #00d6b4;
+                }
+
+                &:focus + label,
+                &:not(:placeholder-shown) + label {
+                    top: 10px;
+                    font-size: 12px;
+                    color: #00d6b4;
+                }
+            }
         }
     }
 
     .textarea {
         width: 100%;
-        height: 100px;
         padding: 12px 15px;
         border: 1px solid #ccc;
         border-radius: 8px;
         font-size: 14px;
         resize: none;
+        height: 100px;
+        outline: none;
+
+        &:focus {
+            border-color: #00d6b4;
+        }
     }
 
     .submit-button {
@@ -98,6 +136,7 @@
     .textarea {
         font-size: 12px;
         padding: 10px 12px;
+        width: 100%;
     }
 
     .submit-button {

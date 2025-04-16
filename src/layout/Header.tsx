@@ -11,7 +11,7 @@ const Header = () => {
         const offcanvas = new window.bootstrap.Offcanvas(offcanvasElement);
 
         const handleRouteChange = () => {
-            offcanvas.hide(); 
+            offcanvas.hide();
         };
 
         navigate((location) => {
@@ -28,20 +28,22 @@ const Header = () => {
                 <Link to="/">
                     <img src={logo} alt="Bionet Logo" className="header__logo" />
                 </Link>
+
+            </div>
+            <div className="header__right">
                 <nav className="header__nav">
                     <Link to="/projects">Layihələrimiz</Link>
                     <Link to="/services">Xidmetlerimiz</Link>
                     <Link to="/about">Haqqımızda</Link>
                     <Link to="/contact">Əlaqə</Link>
                 </nav>
-            </div>
-            <div className="header__right">
                 <button className="header__search">
                     <i className="fa-solid fa-magnifying-glass"></i>
                 </button>
                 <span className="header__lang">En</span>
-            </div>
             <button className="header__contact">BİZƏ YAZIN</button>
+
+            </div>
 
             <div className="offcanvasForResponse">
                 <button
