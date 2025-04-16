@@ -1,0 +1,122 @@
+.webProject-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 1rem;
+}
+
+.webProject-hero-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.webProject-hero-all {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.webProject-hero-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 550px;
+}
+
+.webProject-hero-image {
+    // background-color: #f2f9ff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* Important for button positioning */
+}
+
+.webProject-hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: contain;
+}
+
+.webProject-btn {
+    position: absolute;
+    bottom: 30px;
+    left: 50px;
+    padding: 0.5rem 1rem;
+    background-color: #000000CC;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.webProject-btn:hover {
+    background-color: #45a049;
+}
+
+.webProject-content {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+.webProject-hero-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 1350px) {
+    .webProject-hero-all {
+        gap: 1rem;
+    }
+
+    .webProject-hero-column {
+        max-width: 600px;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .webProject-hero-all {
+        flex-direction: column;
+        gap: 2rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .webProject-hero-all-right {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .webProject-hero-all-left {
+        flex-direction: column;
+    }
+
+    .webProject-hero-image {
+        width: 100%;
+    }
+
+    .webProject-hero-column {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .webProject-hero-image img {
+        width: 100%;
+    }
+}

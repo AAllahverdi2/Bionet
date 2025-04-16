@@ -1,0 +1,155 @@
+.web-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.web-dev {
+    padding: 60px 20px;
+    min-width: 1000px;
+
+    &__title {
+        font-size: 26px;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    &__wrapper {
+        background-color: #F2F5F7;
+        border-radius: 10px;
+        padding: 40px 20px;
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    &__step {
+        max-width: 260px;
+
+        h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin: 16px 0 10px;
+            color: #222;
+        }
+
+        p {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+        }
+    }
+
+    &__icon {
+        background-color: #fff;
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+
+    &__icon img {
+        width: 76px;
+        height: 76px;
+        position: absolute;
+        left: -10px;
+        top: 10px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .web-dev {
+        min-width: 100%;
+    }
+
+    .web-dev__title {
+        font-size: 22px;
+        margin-bottom: 30px;
+    }
+
+    .web-dev__wrapper {
+        padding: 30px 10px;
+        gap: 20px;
+    }
+
+    .web-dev__step {
+        max-width: 45%;
+        padding: 10px;
+    }
+
+    .web-dev__icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .web-dev__icon img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 650px) {
+    .web-dev__wrapper {
+        gap: 15px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .web-dev__step {
+        max-width: 80%;
+        padding: 15px;
+    }
+
+    .web-dev__icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .web-dev__icon img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .web-dev__title {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .web-dev__wrapper {
+        padding: 20px 5px;
+    }
+
+    .web-dev__step {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .web-dev__icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .web-dev__icon img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .web-dev__step h3 {
+        font-size: 14px;
+    }
+
+    .web-dev__step p {
+        font-size: 12px;
+    }
+}
