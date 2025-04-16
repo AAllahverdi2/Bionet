@@ -5,10 +5,11 @@
     align-items: center;
     gap: 30px;
     max-width: 1300px;
-    margin: 0 auto; 
+    margin: 0 auto;
     margin-top: 70px !important;
     // min-height: 40vh !important;
-padding-bottom: 50px !important;
+    padding-bottom: 50px !important;
+
     .team-header {
         margin-bottom: 50px;
 
@@ -46,7 +47,7 @@ padding-bottom: 50px !important;
         text-align: center;
         z-index: 2;
         height: 200px;
-        max-width: 180px; 
+        max-width: 180px;
         width: 100%;
 
         .member-photo {
@@ -81,12 +82,13 @@ padding-bottom: 50px !important;
 
 
 @media only screen and (max-width: 1000px) {
-   .team-members{
-    max-width: 600px;
-   }
-  }
+    .team-members {
+        max-width: 600px;
+    }
+}
+
 @media only screen and (max-width: 870px) {
-    .team-container{
+    .team-container {
         display: flex;
         flex-direction: column;
         gap: 0px;
@@ -94,42 +96,55 @@ padding-bottom: 50px !important;
         margin: 0px;
         min-height: 100vh !important;
     }
-    .team-header{
+
+    .team-header {
         max-width: 100%;
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        p{
+
+        p {
             max-width: 100% !important;
             width: 100%;
         }
     }
-  }
+}
 
-  
-  @media only screen and (max-width: 660px) {
+
+
+
+@media only screen and (max-width: 660px) {
     .team-members {
         display: flex;
         flex-direction: column;
-        max-height: 100% !important;
         justify-content: center;
         align-items: center;
+        max-height: 100% !important;
     }
 
     .team-member {
         min-height: 250px !important;
         display: flex;
         flex-direction: column;
-        align-items: start !important;
+        align-items: center !important;
         border-radius: 10px;
-    }
-    .member-photo{
-        display: flex;
-        justify-content: start;
-        align-items: start;
+        width: 100% !important;
+        max-width: 100% !important;
     }
 
-   
+    .member-photo {
+        margin-left: 10px !important;
+
+        width: 120px;
+        height: 120px;
+        margin: 0 auto;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 15px;
+    }
+
+    .member-info {
+        text-align: center;
+    }
 }
-
