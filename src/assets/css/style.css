@@ -1148,9 +1148,12 @@
   max-width: 1200px;
   margin: 0 auto;
 }
+.contact-header-all p {
+  color: white;
+}
 
 .contact-header {
-  background-color: #587ABC;
+  background-color: #054683;
   color: white;
   padding: 50px;
   padding-top: 100px;
