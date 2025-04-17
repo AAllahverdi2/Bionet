@@ -1,9 +1,10 @@
-.sevices-all-color{
+.sevices-all-color {
     width: 100% !important;
     background-color: #F2F5F7;
-    padding: 40px !important ;
+    padding: 40px !important;
 }
-.services-all-contact{
+
+.services-all-contact {
     background-color: #F2F5F7;
 
     padding: 35px;
@@ -13,6 +14,7 @@
     align-items: center;
     // margin-bottom: 40px;
 }
+
 .quote-form {
     margin: 0 auto;
     padding: 40px 20px;
@@ -150,15 +152,23 @@
         gap: 0px !important;
         // border: 3px solid red;
     }
-    .services-all-contact{
-        background-color: gray;
+
+    .services-all-contact {
         background-color: #F2F5F7;
         padding: 35px;
         min-height: 800px;
         display: flex;
         justify-content: center;
         align-items: center;
+        // border: 1px solid red;
         // margin-bottom: 40px;
+    }
+
+    .quote-form {
+        width: 100%;
+        // border: 3px solid red;
+        border-radius: 5px;
+
     }
 
     .title {
@@ -192,9 +202,9 @@
         font-size: 14px;
         width: 100%;
     }
+
     .quote-form .form-group {
-        display: flex
-    ;
+        display: flex;
         /* gap: 20px; */
         width: 100%;
         justify-content: space-between;
@@ -206,9 +216,13 @@
     .quote-form {
         padding: 20px 10px;
     }
+    .services-all-contact{
+        width: 100% !important;
+        padding: 0px !important;
+    }
 
     .title {
-        font-size: 24px;
+        font-size: 20px;
         margin-bottom: 10px;
     }
 
@@ -224,6 +238,10 @@
     .input {
         font-size: 12px;
         padding: 8px 10px;
+    }
+    .input::placeholder{
+        // color: red;
+        font-size: 12px;
     }
 
     .textarea {

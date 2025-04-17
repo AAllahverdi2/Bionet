@@ -68,19 +68,19 @@ const Header = () => {
                         <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div className="offcanvas-body">
-                        <Link to="/projects" onClick={() => offcanvas.hide()} className={location.pathname === '/projects' ? 'active' : ''}>
+                        <Link to="/projects" onClick={() => offcanvas.hide()} className={location.pathname === '/projects' ? '' : ''}>
                             Lahiyelerimiz
                         </Link>
                         <hr />
-                        <Link to="/services" onClick={() => offcanvas.hide()} className={location.pathname === '/services' ? 'active' : ''}>
+                        <Link to="/services" onClick={() => offcanvas.hide()} className={location.pathname === '/services' ? '' : ''}>
                             Xidmetlerimiz
                         </Link>
                         <hr />
-                        <Link to="/about" onClick={() => offcanvas.hide()} className={location.pathname === '/about' ? 'active' : ''}>
+                        <Link to="/about" onClick={() => offcanvas.hide()} className={location.pathname === '/about' ? '' : ''}>
                             Haqqimizda
                         </Link>
                         <hr />
-                        <Link to="/contact" onClick={() => offcanvas.hide()} className={location.pathname === '/contact' ? 'active' : ''}>
+                        <Link to="/contact" onClick={() => offcanvas.hide()} className={location.pathname === '/contact' ? '' : ''}>
                             Elaqe
                         </Link>
                         <hr />
