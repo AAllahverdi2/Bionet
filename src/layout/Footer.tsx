@@ -1,4 +1,3 @@
-import React from 'react';
 import '../assets/css/style.css';
 import card1 from '../assets/image/Logo 2.svg'
 import card2 from '../assets/image/Vector.svg'

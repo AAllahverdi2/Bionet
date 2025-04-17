@@ -1,4 +1,3 @@
-import React from 'react';
 import '../../../assets/css/style.css';
 import teamMember1 from '../../../assets/image/ellipse1.png'; // Şəkil yolu
 import teamMember2 from '../../../assets/image/ellipse2.png'; // Şəkil yolu

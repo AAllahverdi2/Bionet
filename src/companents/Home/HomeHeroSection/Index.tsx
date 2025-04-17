@@ -1,4 +1,3 @@
-import React from 'react';
 import '../../../assets/css/style.css'
 import bp from '../../../assets/image/image 2.png'
 import azal from '../../../assets/image/image 3.png'

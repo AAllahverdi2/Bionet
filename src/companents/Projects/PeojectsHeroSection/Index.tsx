@@ -1,16 +1,9 @@
-import React from 'react'
 import '../../../assets/css/style.css'
-import card1 from '../../../assets/image/image23.png'
 import card2 from '../../../assets/image/image24.png'
-// Import Swiper styles
-import { Swiper, SwiperSlide } from 'swiper/react';
 
-import 'swiper/css';
-import 'swiper/css/navigation';
 
 // import './styles.css';
 import image1 from '../../../assets/image/image18.png'
-import { Navigation } from 'swiper/modules';
 import { Link } from 'react-router';
 
 const Index = () => {

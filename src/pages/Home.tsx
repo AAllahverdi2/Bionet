@@ -1,4 +1,3 @@
-import React from 'react';
 import { Helmet } from 'react-helmet';
 import Index from '../companents/Home/HomeHeroSection/Index';
 import HomeServices from '../companents/Home/HomeServices/Index';

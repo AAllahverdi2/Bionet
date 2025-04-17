@@ -1,4 +1,3 @@
-import React from 'react'
 import '../../../assets/css/style.css'
 import image1 from '../../../assets/image/Aser.png'
 import image2 from '../../../assets/image/Dostex.png'

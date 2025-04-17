@@ -1,16 +1,47 @@
-import React, { useState } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import  { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/image/logo.png';
 import '../assets/css/style.css';
-
+declare const bootstrap: any;
 const Header = () => {
     const [searchVisible, setSearchVisible] = useState(false);
-    const navigate = useNavigate();
     const location = useLocation();
-
+    const [ , setIsOffcanvasVisible] = useState(false);
     const toggleSearch = () => {
         setSearchVisible(!searchVisible);
     };
+
+    const closeOffcanvas = () => {
+        const offcanvasElement = document.getElementById('offcanvasLeft');
+        if (offcanvasElement) {
+            const offcanvas = bootstrap.Offcanvas.getInstance(offcanvasElement);
+            if (offcanvas) {
+                offcanvas.hide();
+            } else {
+                new bootstrap.Offcanvas(offcanvasElement).hide();
+            }
+        }
+    };
+
+    useEffect(() => {
+        closeOffcanvas();
+    }, [location]);
+
+    useEffect(() => {
+        const offcanvasElement = document.getElementById('offcanvasLeft');
+        if (offcanvasElement) {
+            const handleShow = () => setIsOffcanvasVisible(true);
+            const handleHide = () => setIsOffcanvasVisible(false);
+
+            offcanvasElement.addEventListener('show.bs.offcanvas', handleShow);
+            offcanvasElement.addEventListener('hidden.bs.offcanvas', handleHide);
+
+            return () => {
+                offcanvasElement.removeEventListener('show.bs.offcanvas', handleShow);
+                offcanvasElement.removeEventListener('hidden.bs.offcanvas', handleHide);
+            };
+        }
+    }, []);
 
     return (
         <header className="header container">
@@ -62,29 +93,35 @@ const Header = () => {
                     <i className="fa-solid fa-bars"></i>
                 </button>
 
-                <div className="offcanvas offcanvas-start" tabIndex="-1" id="offcanvasLeft" aria-labelledby="offcanvasLeftLabel">
+                <div className="offcanvas offcanvas-start" tabIndex={-1} id="offcanvasLeft" aria-labelledby="offcanvasLeftLabel">
                     <div className="offcanvas-header">
                         <h5 id="offcanvasLeftLabel"></h5>
-                        <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        <button
+                            type="button"
+                            className="btn-close text-reset"
+                            data-bs-dismiss="offcanvas"
+                            aria-label="Close"
+                            onClick={closeOffcanvas}
+                        ></button>
                     </div>
                     <div className="offcanvas-body">
-                        <Link to="/projects" onClick={() => offcanvas.hide()} className={location.pathname === '/projects' ? '' : ''}>
-                            Lahiyelerimiz
+                        <Link to="/projects" onClick={closeOffcanvas} className={location.pathname === '/projects' ? '' : ''}>
+                            Layihələrimiz
                         </Link>
                         <hr />
-                        <Link to="/services" onClick={() => offcanvas.hide()} className={location.pathname === '/services' ? '' : ''}>
-                            Xidmetlerimiz
+                        <Link to="/services" onClick={closeOffcanvas} className={location.pathname === '/services' ? '' : ''}>
+                            Xidmətlərimiz
                         </Link>
                         <hr />
-                        <Link to="/about" onClick={() => offcanvas.hide()} className={location.pathname === '/about' ? '' : ''}>
-                            Haqqimizda
+                        <Link to="/about" onClick={closeOffcanvas} className={location.pathname === '/about' ? '' : ''}>
+                            Haqqımızda
                         </Link>
                         <hr />
-                        <Link to="/contact" onClick={() => offcanvas.hide()} className={location.pathname === '/contact' ? '' : ''}>
-                            Elaqe
+                        <Link to="/contact" onClick={closeOffcanvas} className={location.pathname === '/contact' ? '' : ''}>
+                            Əlaqə
                         </Link>
                         <hr />
-                        <Link to='/contact' className="header__contact btn-response">BİZƏ YAZIN</Link>
+                        <Link to='/contact' className="header__contact btn-response" onClick={closeOffcanvas}>BİZƏ YAZIN</Link>
                     </div>
                 </div>
             </div>

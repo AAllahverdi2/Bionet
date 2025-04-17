@@ -1,4 +1,3 @@
-import React from 'react'
 import ContactHeroSection from '../companents/Contact/ContactHeroSection/Index'
 import { Helmet } from 'react-helmet';
 

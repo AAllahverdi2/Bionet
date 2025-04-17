@@ -19,12 +19,14 @@
     "react-router": "^7.5.0",
     "react-router-dom": "^7.5.0",
     "sass": "^1.86.3",
-    "swiper": "^11.2.6"
+    "swiper": "^8.4.7"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
+    "@types/bootstrap": "^5.2.10",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
+    "@types/react-helmet": "^6.1.11",
     "@vitejs/plugin-react": "^4.3.4",
     "eslint": "^9.21.0",
     "eslint-plugin-react-hooks": "^5.1.0",
