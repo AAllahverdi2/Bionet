@@ -63,8 +63,8 @@ const Index = () => {
                     <Swiper
                         modules={[Navigation]}
                         navigation={{
-                            nextEl: '.swiper-button-next',
-                            prevEl: '.swiper-button-prev',
+                            nextEl: '.swiper-button-prev', 
+                            prevEl: '.swiper-button-next', 
                         }}
                         className="mySwiper"
                     >
@@ -73,11 +73,11 @@ const Index = () => {
                         <SwiperSlide><img src={image1} alt="Slide 3" /></SwiperSlide>
                         <SwiperSlide><img src={image1} alt="Slide 4" /></SwiperSlide>
                     </Swiper>
-                    <div className="swiper-button-next">
-                        <i className="fa-solid fa-left-long"></i>
-                    </div>
                     <div className="swiper-button-prev">
-                        <i className="fa-solid fa-right-long"></i>
+                        <i className="fa-solid fa-right-long"></i> 
+                    </div>
+                    <div className="swiper-button-next">
+                        <i className="fa-solid fa-left-long"></i> 
                     </div>
                 </div>
             </div>
