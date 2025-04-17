@@ -10,7 +10,7 @@ const Index = () => {
             <div className="about-second-all">
                 <div className="about-second-left">
                     <h2>
-                        BIZIM MISSIYAMIZ
+                        BİZİM MİSSİYAMIZ
                     </h2>
                     <p>
                         Şirkətimiz, Bionet uzun illərdir ki, müştərilərinə yüksək keyfiyyətli veb-saytların hazırlanması xidmətini təklif edir. Müxtəlif sənaye sahələrində fəaliyyət göstərən müəssisələrlə əməkdaşlıq edərək, onların onlayn mövcudluğunu artırmağa və bizneslərini rəqəmsal dünyaya adaptasiya etməyə kömək edirik

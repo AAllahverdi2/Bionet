@@ -4,12 +4,12 @@ import logo from '../assets/image/logo.png';
 import '../assets/css/style.css';
 
 const Header = () => {
-    const [searchVisible, setSearchVisible] = useState(false); // State to toggle search visibility
+    const [searchVisible, setSearchVisible] = useState(false);
     const navigate = useNavigate();
-    const location = useLocation(); // To get the current location
+    const location = useLocation();
 
     const toggleSearch = () => {
-        setSearchVisible(!searchVisible); // Toggle search input visibility
+        setSearchVisible(!searchVisible);
     };
 
     return (
@@ -34,16 +34,19 @@ const Header = () => {
                         Əlaqə
                     </Link>
                 </nav>
-                <button className="header__search" onClick={toggleSearch}>
-                    <i className="fa-solid fa-magnifying-glass"></i>
-                </button>
-                {searchVisible && (
+
+                <div className="header__search-container">
+                    <i className={`fa-solid fa-magnifying-glass header__search-icon ${searchVisible ? '' : 'hidden'}`}></i>
                     <input
                         type="text"
-                        className="header__search-input"
+                        className={`header__search-input ${searchVisible ? 'visible' : ''}`}
                         placeholder="Search..."
                     />
-                )}
+                    <button className="header__search-button" onClick={toggleSearch}>
+                        <i className={`fa-solid ${searchVisible ? 'fa-times' : 'fa-magnifying-glass'}`}></i>
+                    </button>
+                </div>
+
                 <span className="header__lang">En</span>
                 <Link to='/contact' className="header__contact">BİZƏ YAZIN</Link>
             </div>

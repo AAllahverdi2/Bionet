@@ -77,6 +77,59 @@
   border-radius: 5px;
 }
 
+.header__search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.header__search-input {
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  height: 40px;
+  opacity: 0;
+  width: 0;
+  transition: all 0.3s ease;
+  padding: 0;
+  padding-left: 40px;
+  outline: none;
+  font-size: 14px;
+}
+
+.header__search-input.visible {
+  opacity: 1;
+  width: 200px;
+  padding-left: 40px;
+}
+
+.header__search-icon {
+  position: absolute;
+  left: 15px;
+  color: #666;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.header__search-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  font-size: 18px;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.header__search-button:hover {
+  color: #007aff;
+}
+
+.header__search-icon.hidden {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
 .offcanvasForResponse {
   display: none;
 }
@@ -85,7 +138,7 @@
   background-color: #1976d2;
 }
 
-@media (max-width: 1115px) {
+@media (max-width: 1175px) {
   .header {
     gap: 30px;
     padding: 16px 10px;
@@ -145,7 +198,7 @@
     max-width: 100px;
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 970px) {
   .header {
     gap: 10px;
     padding: 5px 5px;
@@ -713,6 +766,7 @@
   gap: 3rem;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 30px !important;
 }
 .footer__logo img {
   width: 120px;
@@ -768,14 +822,18 @@
 }
 .footer__bottom {
   border-top: 1px solid #ddd;
-  margin-top: 2rem;
-  padding-top: 1rem;
   text-align: center;
   font-size: 14px;
   font-weight: 550;
+  display: flex;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center !important;
+  height: 50px;
 }
 .footer__bottom p {
   color: black !important;
+  margin-top: 50px;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -821,11 +879,25 @@
   margin: 0 auto;
 }
 
+.services-all-contact {
+  background-color: gray;
+  background-color: #F2F5F7;
+  padding: 35px;
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .quote-form {
   margin: 0 auto;
   padding: 40px 20px;
   text-align: center;
   font-family: sans-serif;
+  max-width: 100%;
+  width: 80%;
+  background-color: white;
+  height: auto;
 }
 .quote-form .title {
   font-size: 32px;
@@ -930,6 +1002,18 @@
 @media (max-width: 768px) {
   .quote-form {
     padding: 30px 15px;
+    max-height: 60%;
+    height: 60%;
+    gap: 0px !important;
+  }
+  .services-all-contact {
+    background-color: gray;
+    background-color: #F2F5F7;
+    padding: 35px;
+    min-height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .title {
     font-size: 28px;
@@ -941,7 +1025,6 @@
   }
   .form-group {
     flex-direction: column;
-    gap: 15px;
   }
   .input {
     font-size: 12px;
@@ -957,6 +1040,13 @@
     font-size: 14px;
     width: 100%;
   }
+  .quote-form .form-group {
+    display: flex;
+    /* gap: 20px; */
+    width: 100%;
+    justify-content: space-between;
+    width: 100%;
+  }
 }
 @media (max-width: 480px) {
   .quote-form {
@@ -969,9 +1059,6 @@
   .subtitle {
     font-size: 12px;
     margin-bottom: 15px;
-  }
-  .form-group {
-    gap: 10px;
   }
   .input {
     font-size: 12px;
@@ -1247,7 +1334,7 @@
   margin-top: 40px;
 }
 .about-hero-all p {
-  max-width: 1000px;
+  max-width: 1100px;
   color: white;
   padding: 10px;
 }
@@ -1270,7 +1357,7 @@
 .about-second-all {
   display: flex;
   gap: 40px;
-  justify-content: center;
+  justify-content: space-between;
   background-color: #F0F0F0;
   padding-top: 30px;
   position: relative;
@@ -1293,7 +1380,7 @@
 .about-second-left p {
   font-size: 14px;
   font-weight: 400;
-  max-width: 522px;
+  max-width: 622px;
   color: rgba(0, 0, 0, 0.6980392157);
   line-height: 1.6;
   margin-bottom: 20px;
@@ -1430,14 +1517,12 @@
 
 .team-container {
   background-color: white;
-  padding: 50px;
   display: flex;
-  align-items: center;
+  justify-content: space-between;
   gap: 30px;
-  max-width: 1300px;
   margin: 0 auto;
   margin-top: 70px !important;
-  padding-bottom: 50px !important;
+  min-height: 300px;
 }
 .team-container .team-header {
   margin-bottom: 50px;
@@ -1503,14 +1588,13 @@
     max-width: 600px;
   }
 }
-@media only screen and (max-width: 870px) {
+@media only screen and (max-width: 935px) {
   .team-container {
     display: flex;
     flex-direction: column;
     gap: 0px;
     padding: 0px;
-    margin: 0px;
-    min-height: 100vh !important;
+    margin-bottom: 35px !important;
   }
   .team-header {
     max-width: 100%;

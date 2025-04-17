@@ -1,8 +1,24 @@
+.services-all-contact{
+    background-color: gray;
+    background-color: #F2F5F7;
+    padding: 35px;
+    min-height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // margin-bottom: 40px;
+}
 .quote-form {
     margin: 0 auto;
     padding: 40px 20px;
     text-align: center;
     font-family: sans-serif;
+    max-width: 100%;
+    width: 80%;
+    background-color: white;
+    height: auto;
+    // border: 3px solid red;
+
 
     .title {
         font-size: 32px;
@@ -124,6 +140,20 @@
 @media (max-width: 768px) {
     .quote-form {
         padding: 30px 15px;
+        max-height: 60%;
+        height: 60%;
+        gap: 0px !important;
+        // border: 3px solid red;
+    }
+    .services-all-contact{
+        background-color: gray;
+        background-color: #F2F5F7;
+        padding: 35px;
+        min-height: 800px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // margin-bottom: 40px;
     }
 
     .title {
@@ -138,7 +168,7 @@
 
     .form-group {
         flex-direction: column;
-        gap: 15px;
+        // gap: 2px;
     }
 
     .input {
@@ -155,6 +185,14 @@
     .submit-button {
         padding: 10px 40px;
         font-size: 14px;
+        width: 100%;
+    }
+    .quote-form .form-group {
+        display: flex
+    ;
+        /* gap: 20px; */
+        width: 100%;
+        justify-content: space-between;
         width: 100%;
     }
 }
@@ -175,7 +213,7 @@
     }
 
     .form-group {
-        gap: 10px;
+        // gap: 10px;
     }
 
     .input {

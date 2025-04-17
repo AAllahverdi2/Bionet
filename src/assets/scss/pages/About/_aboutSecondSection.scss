@@ -11,7 +11,7 @@
 .about-second-all {
     display: flex;
     gap: 40px;
-    justify-content: center;
+    justify-content: space-between;
     background-color: #F0F0F0;
     padding-top: 30px;
     position: relative;
@@ -34,7 +34,7 @@
 .about-second-left p {
     font-size: 14px;
     font-weight: 400;
-    max-width: 522px;
+    max-width: 622px;
     color: #000000B2;
     line-height: 1.6;
     margin-bottom: 20px;
