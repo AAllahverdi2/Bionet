@@ -5,6 +5,7 @@ import azal from '../../../assets/image/image 3.png'
 import irshad from '../../../assets/image/image 5.png'
 import rabite from '../../../assets/image/image6.png'
 import kapital from '../../../assets/image/image7.png'
+import { Link } from 'react-router';
 const Index = () => {
   return (
     <section className="hero">
@@ -18,7 +19,7 @@ const Index = () => {
               Together, We Create the Future at Bionet. We design and develop digital products that elevate <br />
               your brand and connect with your audience. Let’s innovate together.
             </p>
-            <button className="hero__btn">PORTFOLİOMUZ</button>
+            <Link to='/projects' className="hero__btn">PORTFOLİOMUZ</Link>
           </div>
 
           <div className="partners">

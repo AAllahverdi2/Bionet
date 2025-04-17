@@ -6,7 +6,10 @@
     margin-top: 60px;
     padding-bottom: 40px;
 }
-
+.home-activity-color{
+    max-width: 100% !important;
+    background-color: #008B85;
+}
 .activities {
     background-color: #008B85;
     padding: 60px 20px;
@@ -130,7 +133,6 @@
     }
 }
 
-/* For screens smaller than 600px */
 @media (max-width: 640px) {
     .activities__wrapper {
         flex-direction: column;

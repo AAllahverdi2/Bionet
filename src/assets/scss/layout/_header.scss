@@ -236,7 +236,10 @@
     }
 
     .btn-response {
-        display: block !important;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        color: white !important;
     }
 
     .offcanvas-body {

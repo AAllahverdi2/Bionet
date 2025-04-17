@@ -215,7 +215,10 @@
     display: block;
   }
   .btn-response {
-    display: block !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    color: white !important;
   }
   .offcanvas-body {
     display: flex;
@@ -455,6 +458,11 @@
   padding-bottom: 40px;
 }
 
+.home-activity-color {
+  max-width: 100% !important;
+  background-color: #008B85;
+}
+
 .activities {
   background-color: #008B85;
   padding: 60px 20px;
@@ -572,7 +580,6 @@
     font-size: 16px;
   }
 }
-/* For screens smaller than 600px */
 @media (max-width: 640px) {
   .activities__wrapper {
     flex-direction: column;
@@ -879,8 +886,13 @@
   margin: 0 auto;
 }
 
+.sevices-all-color {
+  width: 100% !important;
+  background-color: #F2F5F7;
+  padding: 40px !important;
+}
+
 .services-all-contact {
-  background-color: gray;
   background-color: #F2F5F7;
   padding: 35px;
   min-height: 600px;
@@ -2007,6 +2019,7 @@ p {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 45px !important;
 }
 .product-tabs__title {
   font-size: 24px;
