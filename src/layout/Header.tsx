@@ -1,26 +1,16 @@
-import React, { useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import logo from '../assets/image/logo.png';
 import '../assets/css/style.css';
 
 const Header = () => {
+    const [searchVisible, setSearchVisible] = useState(false); // State to toggle search visibility
     const navigate = useNavigate();
+    const location = useLocation(); // To get the current location
 
-    useEffect(() => {
-        const offcanvasElement = document.getElementById('offcanvasLeft');
-        const offcanvas = new window.bootstrap.Offcanvas(offcanvasElement);
-
-        const handleRouteChange = () => {
-            offcanvas.hide();
-        };
-
-        navigate((location) => {
-            handleRouteChange();
-        });
-
-        return () => {
-        };
-    }, [navigate]);
+    const toggleSearch = () => {
+        setSearchVisible(!searchVisible); // Toggle search input visibility
+    };
 
     return (
         <header className="header container">
@@ -28,21 +18,34 @@ const Header = () => {
                 <Link to="/">
                     <img src={logo} alt="Bionet Logo" className="header__logo" />
                 </Link>
-
             </div>
             <div className="header__right">
                 <nav className="header__nav">
-                    <Link to="/projects">Layihələrimiz</Link>
-                    <Link to="/services">Xidmetlerimiz</Link>
-                    <Link to="/about">Haqqımızda</Link>
-                    <Link to="/contact">Əlaqə</Link>
+                    <Link to="/projects" className={location.pathname === '/projects' ? 'active' : ''}>
+                        Layihələrimiz
+                    </Link>
+                    <Link to="/services" className={location.pathname === '/services' ? 'active' : ''}>
+                        Xidmətlərimiz
+                    </Link>
+                    <Link to="/about" className={location.pathname === '/about' ? 'active' : ''}>
+                        Haqqımızda
+                    </Link>
+                    <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''}>
+                        Əlaqə
+                    </Link>
                 </nav>
-                <button className="header__search">
+                <button className="header__search" onClick={toggleSearch}>
                     <i className="fa-solid fa-magnifying-glass"></i>
                 </button>
+                {searchVisible && (
+                    <input
+                        type="text"
+                        className="header__search-input"
+                        placeholder="Search..."
+                    />
+                )}
                 <span className="header__lang">En</span>
-            <button className="header__contact">BİZƏ YAZIN</button>
-
+                <Link to='/contact' className="header__contact">BİZƏ YAZIN</Link>
             </div>
 
             <div className="offcanvasForResponse">
@@ -62,11 +65,23 @@ const Header = () => {
                         <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div className="offcanvas-body">
-                        <Link to="/projects" onClick={() => offcanvas.hide()}>Lahiyelerimiz</Link><hr />
-                        <Link to="/services" onClick={() => offcanvas.hide()}>Xidmetlerimiz</Link><hr />
-                        <Link to="/about" onClick={() => offcanvas.hide()}>Haqqimizda</Link><hr />
-                        <Link to="/contact" onClick={() => offcanvas.hide()}>Elaqe</Link><hr />
-                        <button className="header__contact btn-response">BİZƏ YAZIN</button>
+                        <Link to="/projects" onClick={() => offcanvas.hide()} className={location.pathname === '/projects' ? 'active' : ''}>
+                            Lahiyelerimiz
+                        </Link>
+                        <hr />
+                        <Link to="/services" onClick={() => offcanvas.hide()} className={location.pathname === '/services' ? 'active' : ''}>
+                            Xidmetlerimiz
+                        </Link>
+                        <hr />
+                        <Link to="/about" onClick={() => offcanvas.hide()} className={location.pathname === '/about' ? 'active' : ''}>
+                            Haqqimizda
+                        </Link>
+                        <hr />
+                        <Link to="/contact" onClick={() => offcanvas.hide()} className={location.pathname === '/contact' ? 'active' : ''}>
+                            Elaqe
+                        </Link>
+                        <hr />
+                        <Link to='/contact' className="header__contact btn-response">BİZƏ YAZIN</Link>
                     </div>
                 </div>
             </div>

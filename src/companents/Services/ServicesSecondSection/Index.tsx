@@ -10,10 +10,10 @@ const Index = () => {
         bizə yazın və qiymət təklifi alın
       </p>
 
-      <form className="form">
+      <form className="form container">
         <div className="form-group">
           <div className="input-field">
-            <label htmlFor="first-name">Adınızı və soyadınızı daxil edin</label>
+            <label htmlFor="first-name">Adınızı və soyadınız</label>
             <input
               id="first-name"
               type="text"
@@ -22,7 +22,7 @@ const Index = () => {
             />
           </div>
           <div className="input-field">
-            <label htmlFor="contact-number">Əlaqə nömrənizi daxil edin</label>
+            <label htmlFor="contact-number">Əlaqə nömrəniz</label>
             <input
               id="contact-number"
               type="text"

@@ -74,8 +74,13 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 630px;
+    max-width: 600px;
     width: 100%;
+    max-height: 500px;
+    img{
+        max-height: 380px !important;
+        height: 100% !important;
+    }
 }
 
 .myProject-hero-all-right-image img {
@@ -111,7 +116,9 @@ p {
 .second-left{
     background-color: #92EE8C80;
 }
-
+.first-left{
+    background-color: #B0D9FF;
+}
 @media screen and (max-width: 1250px) {
 
     .myProject-hero-all-left,

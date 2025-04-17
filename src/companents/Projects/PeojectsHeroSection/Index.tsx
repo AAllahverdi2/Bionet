@@ -17,17 +17,12 @@ const Index = () => {
     return (
         <section>
             <div className="myProject-hero-title">
-                Lahiyələrimiz
+                Layihələrimiz
             </div>
             <div className='myProject-hero-all'>
-                <Link to="/vebproject" className="myProject-hero-all-left">
-                    <div className="myProject-products-tabs-bottom-right">
-                        <Swiper navigation={true} modules={[Navigation]} className="myProject-mySwiper">
-                            <SwiperSlide><img src={card1} alt="Slide 1" /></SwiperSlide>
-                            <SwiperSlide><img src={card1} alt="Slide 1" /></SwiperSlide>
-                            <SwiperSlide><img src={card1} alt="Slide 1" /></SwiperSlide>
-                            <SwiperSlide><img src={card1} alt="Slide 1" /></SwiperSlide>
-                        </Swiper>
+                <Link to="/vebproject" className="myProject-hero-all-right my-left ">
+                    <div className='myProject-hero-all-right-image first-left'>
+                        <img src={image1} alt="" />
                     </div>
                     <div className="myProject-content">
                         <h3>Veb Sayt</h3>
@@ -58,7 +53,7 @@ const Index = () => {
                         <p>Flyex Kargo</p>
                     </div>
                 </Link>
-                <Link to="/mobileproject" className="myProject-hero-all-right">
+                <Link to="/mobileprojects" className="myProject-hero-all-right">
                     <div className='myProject-hero-all-right-image second-left'>
                         <img src={card2} alt="" />
                     </div>

@@ -11,7 +11,6 @@ const Index = () => {
         Layihələrimiz
       </div>
       <div className="mobileProject-hero-all">
-        {/* First row (Top row) */}
         <div className="mobileProject-hero-column">
           <div className="mobileProject-hero-image">
             <img src={image1} alt="Image 1" />
@@ -23,7 +22,6 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Second row (Bottom row) */}
         <div className="mobileProject-hero-column">
           <div className="mobileProject-hero-image">
             <img src={image2} alt="Image 3" />

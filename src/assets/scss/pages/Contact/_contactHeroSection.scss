@@ -102,7 +102,7 @@
     }
 }
 .contact_smedia_all{
-    margin-top: 6px;
+    margin-top: 10px;
 }
 .contact-info {
     flex: 1;
@@ -151,17 +151,17 @@
 
         .social-icons {
             display: flex;
-            gap: 15px;
-            margin-top: 5px;
+            gap: 10px;
+           
 
             img {
-                width: 20px;
+                width: 25px;
                 height: 25px;
-                object-fit: cover;
+                object-fit: contain;
                 cursor: pointer;
                 border-radius: 50%;
                 background-color: white;
-                padding: 5px;
+                // padding: 5px;
                 transition: transform 0.3s ease;
             }
 
@@ -169,6 +169,12 @@
                 transform: scale(1.1);
             }
         }
+    }
+}
+
+@media (max-width:1227px){
+    .contact-content{
+        padding: 30px !important;
     }
 }
 

@@ -4,9 +4,9 @@ import image1 from '../../../assets/image/Group 1389.png'
 import image2 from '../../../assets/image/Group 1392.png'
 import image3 from '../../../assets/image/location_on_24dp_5F6368_FILL1_wght400_GRAD0_opsz24 1.png'
 import image4 from '../../../assets/image/Frame 1985.png'
-import image6 from '../../../assets/image/Logo 2.png'
-import image7 from '../../../assets/image/Vector.png'
-import image8 from '../../../assets/image/Capa 2.png'
+import image6 from '../../../assets/image/Logo 2.svg'
+import image7 from '../../../assets/image/Vector.svg'
+import image8 from '../../../assets/image/Capa 2.svg'
 const Index = () => {
     return (
         <div className="contact-wrapper">

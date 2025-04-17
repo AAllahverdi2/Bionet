@@ -1,10 +1,9 @@
 .footer {
     background-color: #fff;
     border-top: 1px solid #ddd;
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
     font-family: sans-serif;
     color: #333;
-
     &__top {
         display: flex;
         flex-wrap: wrap;
@@ -13,6 +12,9 @@
         gap: 3rem;
         max-width: 1200px;
         margin: 0 auto;
+        // padding: 10px;
+        // border: 3px solid red;
+
     }
 
     &__logo img {
@@ -85,10 +87,15 @@
         padding-top: 1rem;
         text-align: center;
         font-size: 14px;
+        font-weight: 550;
+        // border: 3px solid red;
+        p{
+            color: black !important;
+        }
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1200px) {
    .footer__links{
     display: flex;
     justify-content: center;
@@ -99,4 +106,7 @@ display: flex;
 justify-content: center;
 align-items: center !important;
 } 
+.footer__logo{
+    margin-right: 30px;
+}
 }
