@@ -13,6 +13,10 @@ const Index = () => {
                 Fəaliyyətimiz müddətində çox sahibkarlarla işləyib, uğurlu layihələr ərsəyə gətirmişik.
                 Sizin üçün istədiyiniz vebsaytları və mobil tətbiqləri dizayn edirik.
               </p>
+              <p>
+                Fəaliyyətimiz müddətində çox sahibkarlarla işləyib, uğurlu layihələr ərsəyə gətirmişik.
+                Sizin üçün istədiyiniz vebsaytları və mobil tətbiqləri dizayn edirik.
+              </p>
             </div>
             <div className="activities__right">
               <div className="stat-box green">

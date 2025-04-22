@@ -36,7 +36,7 @@ const Index = () => {
               <label htmlFor="product-info">Məhsul haqqında</label>
               <textarea id="product-info" className="textarea" placeholder="Məhsul haqqında"></textarea>
             </div>
-            <button type="submit" className="submit-button">
+            <button type="submit" className="submit-buttonn">
               Göndər
             </button>
           </form>

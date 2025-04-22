@@ -13,6 +13,7 @@ const Index = () => {
                             Fəaliyyətimiz müddətində çox sahibkarlarla işləyib, uğurlu layihələr ərsəyə gətirmişik. <br />
                             Sizin üçün istədiyiniz vebsaytları və mobil tətbiqləri dizayn edirik.
                         </p>
+                       
                     </div>
 
                     <div className="services__cards">

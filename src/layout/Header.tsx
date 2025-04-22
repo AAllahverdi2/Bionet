@@ -1,4 +1,4 @@
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/image/logo.png';
 import '../assets/css/style.css';
@@ -6,10 +6,10 @@ declare const bootstrap: any;
 const Header = () => {
     const [searchVisible, setSearchVisible] = useState(false);
     const location = useLocation();
-    const [ , setIsOffcanvasVisible] = useState(false);
-    const toggleSearch = () => {
-        setSearchVisible(!searchVisible);
-    };
+    const [, setIsOffcanvasVisible] = useState(false);
+    // const toggleSearch = () => {
+    //     setSearchVisible(!searchVisible);
+    // };
 
     const closeOffcanvas = () => {
         const offcanvasElement = document.getElementById('offcanvasLeft');
@@ -68,12 +68,12 @@ const Header = () => {
 
                 <div className="header__search-container">
                     <i className={`fa-solid fa-magnifying-glass header__search-icon ${searchVisible ? '' : 'hidden'}`}></i>
-                    <input
+                    {/* <input
                         type="text"
                         className={`header__search-input ${searchVisible ? 'visible' : ''}`}
                         placeholder="Search..."
-                    />
-                    <button className="header__search-button" onClick={toggleSearch}>
+                    /> */}
+                    <button className="header__search-button" >
                         <i className={`fa-solid ${searchVisible ? 'fa-times' : 'fa-magnifying-glass'}`}></i>
                     </button>
                 </div>
@@ -105,19 +105,19 @@ const Header = () => {
                         ></button>
                     </div>
                     <div className="offcanvas-body">
-                        <Link to="/projects" onClick={closeOffcanvas} className={location.pathname === '/projects' ? '' : ''}>
+                        <Link to="/projects" onClick={closeOffcanvas} className={location.pathname === '/projects' ? 'activeForOffcanvas' : ''}>
                             Layihələrimiz
                         </Link>
                         <hr />
-                        <Link to="/services" onClick={closeOffcanvas} className={location.pathname === '/services' ? '' : ''}>
+                        <Link to="/services" onClick={closeOffcanvas} className={location.pathname === '/services' ? 'activeForOffcanvas' : ''}>
                             Xidmətlərimiz
                         </Link>
                         <hr />
-                        <Link to="/about" onClick={closeOffcanvas} className={location.pathname === '/about' ? '' : ''}>
+                        <Link to="/about" onClick={closeOffcanvas} className={location.pathname === '/about' ? 'activeForOffcanvas' : ''}>
                             Haqqımızda
                         </Link>
                         <hr />
-                        <Link to="/contact" onClick={closeOffcanvas} className={location.pathname === '/contact' ? '' : ''}>
+                        <Link to="/contact" onClick={closeOffcanvas} className={location.pathname === '/contact' ? 'activeForOffcanvas' : ''}>
                             Əlaqə
                         </Link>
                         <hr />

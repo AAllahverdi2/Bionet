@@ -1,6 +1,6 @@
 import '../../../assets/css/style.css';
-import teamMember1 from '../../../assets/image/ellipse1.png'; // Şəkil yolu
-import teamMember2 from '../../../assets/image/ellipse2.png'; // Şəkil yolu
+// import teamMember1 from '../../../assets/image/ellipse1.png'; // Şəkil yolu
+// import teamMember2 from '../../../assets/image/ellipse2.png'; // Şəkil yolu
 
 const Index = () => {
     return (
@@ -13,7 +13,7 @@ const Index = () => {
                     </p>
                 </div>
 
-                <div className="team-members">
+                {/* <div className="team-members">
                     <div className="team-member">
                         <div className="member-photo">
                             <img src={teamMember1} alt="Ali Ali" />
@@ -43,7 +43,7 @@ const Index = () => {
                             <p>UX/UI Dizayner</p>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </section>
     );

@@ -25,6 +25,8 @@
 }
 
 .about-second-left h2 {
+    font-family: 'Inter', sans-serif;
+
     font-weight: 700;
     font-size: 48px;
     color: #000000B2;
@@ -33,6 +35,8 @@
 
 .about-second-left p {
     font-size: 14px;
+    font-family: 'Inter', sans-serif;
+
     font-weight: 400;
     max-width: 622px;
     color: #000000B2;
@@ -99,21 +103,8 @@
     height: 50px;
 }
 
-
-@media only screen and (max-width: 1000px) {
-    .about-second-left {
-        h2 {
-            font-size: 30px;
-        }
-
-        p {
-            font-size: 14px;
-        }
-    }
-}
-
-
-@media only screen and (max-width: 870px) {
+/* Tablet və daha kiçik ekranlar (935px-dən aşağı) */
+@media only screen and (max-width: 935px) {
     .about-second-all {
         display: flex;
         flex-direction: column;
@@ -125,8 +116,8 @@
 
     .about-second-left {
         width: 100%;
-        
-        p{
+
+        p {
             width: 100% !important;
             max-width: 100% !important;
         }
@@ -141,6 +132,7 @@
         width: 100%;
         max-height: 300px !important;
     }
+
     .about-section-bottom {
         position: absolute;
         top: 80%;
@@ -160,23 +152,75 @@
     }
 }
 
+/* Mobil telefonlar üçün (480px-dən aşağı) */
+@media only screen and (max-width: 480px) {
+    .about-second-left {
+        padding-top: 30px;
+        /* Mobil üçün paddingi azaldırıq */
+    }
 
-@media only screen and (max-width: 460px) {
+    .about-second-left h2 {
+        font-size: 28px;
+        /* Başlıq ölçüsünü kiçildirik */
+        margin-bottom: 15px;
+    }
+
+    .about-second-left p {
+        font-size: 14px;
+        /* Paraqraf ölçüsünü kiçildirik */
+        max-width: 90%;
+        /* Paraqrafın genişliyini azaldırıq */
+    }
+
+    .about-second-right img {
+        max-height: 250px;
+        /* Şəkilin hündürlüyünü azaldırıq */
+    }
+
+    .about-section-bottom {
+        top: 85%;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 10px;
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .about-item .icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .icon img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Daha kiçik ekranlar (320px-dən aşağı) */
+@media only screen and (max-width: 320px) {
+    .about-second-left h2 {
+        font-size: 24px;
+        /* Başlıq ölçüsünü daha da kiçiltirik */
+        margin-bottom: 10px;
+    }
+
+    .about-second-left p {
+        font-size: 12px;
+        /* Paraqraf ölçüsünü daha da kiçiltirik */
+    }
+
+    .about-section-bottom {
+        top: 90%;
+    }
 
     .about-item .icon {
         width: 50px;
         height: 50px;
-        border-radius: 50%;
-        background-color: #ADD8E6;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 15px;
     }
-    
-.icon img {
-    width: 40px;
-    height: 40px;
-}
 
+    .icon img {
+        width: 35px;
+        height: 35px;
+    }
 }

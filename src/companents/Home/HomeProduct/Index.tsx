@@ -1,11 +1,8 @@
 import { useState } from 'react';
 import '../../../assets/css/style.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper-bundle.min.css'; // Düzəldilmiş import
-// import { Navigation } from 'swiper/modules'; 
-
-import { Navigation } from 'swiper'; // Swiper-ın Navigation modulunu düzgün idxal edin
-
+import 'swiper/swiper-bundle.min.css';
+import { Navigation } from 'swiper';
 import image1 from '../../../assets/image/image18.png';
 
 const tabs = [
@@ -65,9 +62,11 @@ const Index = () => {
                     <Swiper
                         modules={[Navigation]}
                         navigation={{
-                            nextEl: '.swiper-button-prev',
-                            prevEl: '.swiper-button-next',
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev',
                         }}
+                        spaceBetween={20}
+                        slidesPerView={1}
                         className="mySwiper"
                     >
                         <SwiperSlide><img src={image1} alt="Slide 1" /></SwiperSlide>
@@ -76,10 +75,10 @@ const Index = () => {
                         <SwiperSlide><img src={image1} alt="Slide 4" /></SwiperSlide>
                     </Swiper>
                     <div className="swiper-button-prev">
-                        <i className="fa-solid fa-right-long"></i>
+                        <i className="fa-solid fa-left-long"></i>
                     </div>
                     <div className="swiper-button-next">
-                        <i className="fa-solid fa-left-long"></i>
+                        <i className="fa-solid fa-right-long"></i>
                     </div>
                 </div>
             </div>

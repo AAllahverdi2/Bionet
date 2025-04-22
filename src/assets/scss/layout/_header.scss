@@ -131,6 +131,7 @@
     opacity: 0;
     transform: translateX(-10px);
 }
+
 .offcanvasForResponse {
     display: none;
 }
@@ -216,21 +217,26 @@
         height: 40px;
         width: 100px !important;
     }
-    
-    .header__left{
-       width: 70px !important;img{
-        max-width: 70px !important;
-        object-fit: contain;
-       }
+
+    .header__left {
+        width: 70px !important;
+
+        img {
+            max-width: 120px !important;
+            object-fit: contain;
+        }
     }
-    .header__search-input::placeholder{
+
+    .header__search-input::placeholder {
         font-size: 12px;
-        i{
+
+        i {
             font-size: 12px !important;
         }
     }
-    .header__search-button{
-        i{
+
+    .header__search-button {
+        i {
             font-size: 12px;
         }
     }
@@ -313,4 +319,38 @@
 .offcanvas-body a.active {
     border-bottom: 2px solid #007aff;
     color: #007aff;
+}
+
+// ///////
+/* Offcanvas içində activeForOffcanvas class */
+
+.offcanvas-body a.activeForOffcanvas {
+    color: #007aff;
+    /* Qırmızı rəng */
+    text-decoration: none;
+    /* Alt xətt olmamalıdır */
+}
+
+/* Normal header linklərində active class */
+.header__nav a.active {
+    border-bottom: 2px solid #007aff;
+    /* Mavi alt xətt */
+    color: #007aff;
+    /* Mavi rəng */
+}
+
+/* Offcanvas içindəki linklər */
+.offcanvas-body a {
+    text-decoration: none;
+    /* Alt xətti silirik */
+    color: #000;
+    /* Varsayılan rəng */
+}
+
+/* Desktop versiya üçün: Offcanvas'daki activeForOffcanvas linklərdə alt xətt yoxdur */
+@media only screen and (min-width: 1024px) {
+    .offcanvas-body a.activeForOffcanvas {
+        text-decoration: none;
+        /* Offcanvas'daki aktif linklərdə alt xətt yoxdur */
+    }
 }

@@ -88,7 +88,9 @@
     content: '\f100';
     font-family: 'Font Awesome 5 Free';
 }
-.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
+
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after {
     content: 'none';
 }
 
@@ -253,10 +255,12 @@
     .swiper-button-next,
     .swiper-button-prev {
         background: white;
-        width: 30px;
-        height: 30px;
-        font-size: 16px;
-        padding: 5px;
+        width: 30px !important;
+        height: 30px !important;
+        border-radius: 50%;
+        font-size: 12px !important;
+        padding: 5px !important;
+        transform: scale(0.8);
     }
 
     .product-tabs__buttons {

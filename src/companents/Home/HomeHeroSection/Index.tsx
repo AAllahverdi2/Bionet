@@ -21,7 +21,7 @@ const Index = () => {
             <Link to='/projects' className="hero__btn">PORTFOLİOMUZ</Link>
           </div>
 
-          <div className="partners">
+          <div className="partners" id='partners'>
             <h2 className="partners__title">Partnyorlar</h2>
             <p className="partners__desc">
               Helping leaders to create and transform products, brand experiences, and <br />
@@ -33,6 +33,9 @@ const Index = () => {
               <img src={irshad} alt="İrşad" />
               <img src={rabite} alt="Rabitabank" />
               <img src={kapital} alt="Kapital Bank" />
+              <img src={bp} alt="bp" />
+              <img src={azal} alt="Azerbaijan Airlines" />
+              <img src={rabite} alt="Rabitabank" />
             </div>
           </div>
         </div>

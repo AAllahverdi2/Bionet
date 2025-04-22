@@ -9,13 +9,16 @@
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    p{
+
+    p {
         color: white;
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
     }
 }
 
 .contact-header {
-    background-color: #054683;
+    background-color: #587ABC;
     color: white;
     padding: 50px;
     padding-top: 100px;
@@ -101,9 +104,11 @@
         }
     }
 }
-.contact_smedia_all{
+
+.contact_smedia_all {
     margin-top: 10px;
 }
+
 .contact-info {
     flex: 1;
     background-color: #014284;
@@ -152,7 +157,7 @@
         .social-icons {
             display: flex;
             gap: 10px;
-           
+
 
             img {
                 width: 25px;
@@ -172,8 +177,8 @@
     }
 }
 
-@media (max-width:1227px){
-    .contact-content{
+@media (max-width:1227px) {
+    .contact-content {
         padding: 30px !important;
     }
 }
@@ -224,6 +229,10 @@
     .contact-info .social-icons img {
         width: 15px;
         height: 15px;
+    }
+
+    .contact-form button {
+        width: 100%;
     }
 }
 
