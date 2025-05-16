@@ -1125,15 +1125,12 @@
     justify-content: center;
     align-items: center;
   }
-  .footer_right .footer_right_inner .footer_right_connetion .contact_section .footer_connection_tag {
-    text-align: center;
-  }
   .footer_right .footer_right_inner .footer_right_connetion .contact_item {
     width: 100%;
     display: flex;
   }
-  .footer_right .footer_right_inner .footer_right_connetion .footer_connection_tag_watch {
-    margin-left: 30px;
+  .footer_right .footer_right_inner .footer_right_connetion .follow_us_section {
+    width: 209px;
   }
 }
 .services-hero-all {

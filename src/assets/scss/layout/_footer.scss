@@ -342,8 +342,6 @@
         align-items: center;
         .contact_section {
           .footer_connection_tag {
-            text-align: center;
-            // border: 3px solid blue;
           }
         }
         .contact_item {
@@ -352,8 +350,8 @@
           display: flex;
           // justify-content: center;
         }
-        .footer_connection_tag_watch {
-          margin-left: 30px;
+        .follow_us_section {
+          width: 209px;
         }
       }
     }
