@@ -57,8 +57,12 @@
   color: #333;
 }
 
+.header__lang_en {
+  display: none !important;
+}
+
 .header__contact {
-  background-color: #38A1FF;
+  background-color: #38a1ff;
   color: white;
   border: none;
   border-radius: 10px;
@@ -79,7 +83,6 @@
 }
 
 .header__search-container {
-  position: relative;
   display: flex;
   align-items: center;
 }
@@ -222,6 +225,12 @@
     padding: 5px 5px;
     display: flex;
     justify-content: space-between !important;
+  }
+  .header__lang {
+    display: none;
+  }
+  .header__lang_en {
+    display: block !important;
   }
   .header__left {
     gap: 15px;
