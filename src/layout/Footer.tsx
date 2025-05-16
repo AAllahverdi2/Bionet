@@ -52,7 +52,7 @@ const Footer = () => {
             </div>
             <div className="footer_right_connetion">
               <div className="contact_section">
-                <h4>ƏLAQƏ</h4>
+                <h4 className="footer_connection_tag">ƏLAQƏ</h4>
                 <div className="contact_item">
                   <img src={logo1} alt="Location" />
                   <span>Bakı, Nərimanov rayonu</span>
@@ -68,7 +68,7 @@ const Footer = () => {
               </div>
 
               <div className="follow_us_section">
-                <h4>BİZİ İZLƏYİN</h4>
+                <h4 className="footer_connection_tag_watch">BİZİ İZLƏYİN</h4>
                 <div className="social_icons">
                   <a href="#">
                     <img src={image6} alt="Facebook" />

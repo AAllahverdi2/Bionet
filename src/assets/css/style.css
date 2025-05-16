@@ -1082,6 +1082,7 @@
     display: flex;
     justify-content: space-around;
     width: 100%;
+    align-items: center;
   }
   .footer_sides .footer_right .footer_right_inner .footer_right_connetion {
     width: auto;
@@ -1094,7 +1095,7 @@
     display: block !important;
   }
 }
-@media only screen and (max-width: 407px) {
+@media only screen and (max-width: 500px) {
   .contact_form .form_row {
     display: flex;
     gap: 10px;
@@ -1119,6 +1120,20 @@
   }
   .footer_right .footer_right_inner .footer_right_connetion {
     width: 100% !important;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer_right .footer_right_inner .footer_right_connetion .contact_section .footer_connection_tag {
+    text-align: center;
+  }
+  .footer_right .footer_right_inner .footer_right_connetion .contact_item {
+    width: 100%;
+    display: flex;
+  }
+  .footer_right .footer_right_inner .footer_right_connetion .footer_connection_tag_watch {
+    margin-left: 30px;
   }
 }
 .services-hero-all {
