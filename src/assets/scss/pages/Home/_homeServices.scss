@@ -1,135 +1,135 @@
 .services {
-    padding: 60px 20px;
-    text-align: center;
-    margin-top: 20px;
+  padding: 60px 20px;
+  text-align: center;
+  margin-top: 20px;
 
-    &__top {
-        margin-bottom: 40px;
-    }
+  &__top {
+    margin-bottom: 40px;
+  }
 
-    &__title {
-        font-size: 28px;
-        font-family: 'Inter', sans-serif;
+  &__title {
+    font-size: 28px;
+    font-family: "Inter", sans-serif;
 
-        font-weight: 700;
-        margin-bottom: 10px;
-    }
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
 
-    &__desc {
-        font-size: 15px;
-        color: #555;
-        max-width: 850px;
-        margin: 0 auto;
-        line-height: 1.6;
-        padding: 20px;
-        font-family: 'Inter', sans-serif;
+  &__desc {
+    font-size: 15px;
+    color: #555;
+    max-width: 850px;
+    margin: 0 auto;
+    line-height: 1.6;
+    padding: 20px;
+    font-family: "Inter", sans-serif;
 
-        font-weight: 400;
-    }
+    font-weight: 400;
+  }
 
-    &__cards {
-        display: flex;
-        justify-content: space-between;
-        gap: 10px;
-        flex-wrap: wrap;
-    }
+  &__cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
 }
 
 .card {
-    background-color: #fff;
-    border-radius: 20px;
-    padding: 30px 20px;
-    max-width: 420px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    position: relative;
-    text-align: left;
-    transition: all 0.3s ease;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 30px 20px;
+  max-width: 420px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  position: relative;
+  text-align: left;
+  transition: all 0.3s ease;
 
-    &__icon {
-        background-color: #00e3c2;
-        border-radius: 50%;
-        width: 60px;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 16px;
+  &__icon {
+    background-color: #00e3c2;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
 
-        img {
-            width: 30px;
-            height: 30px;
-        }
+    img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
     }
+  }
 
-    &__title {
-        font-size: 16px;
-        font-family: 'Inter', sans-serif;
+  &__title {
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
 
-        font-weight: 700;
-        margin-bottom: 10px;
-    }
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
 
-    &__desc {
-        font-size: 14px;
-        color: #555;
-        font-family: 'Inter', sans-serif;
-        font-weight: 400;
-    }
+  &__desc {
+    font-size: 14px;
+    color: #555;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+  }
 
-    &::after {
-        content: '';
-        position: absolute;
-        bottom: -12px;
-        left: 0;
-        width: 100%;
-        height: 20px;
-        border-radius: 0 0 12px 12px;
-        z-index: -1;
-        transform: skewX(-6deg);
-    }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    border-radius: 0 0 12px 12px;
+    z-index: -1;
+    transform: skewX(-6deg);
+  }
 
-    &.green::after {
-        background-color: #00e3c2;
-        height: 20px;
-        transform: skewX(-6deg);
-    }
+  &.green::after {
+    background-color: #00e3c2;
+    height: 20px;
+    transform: skewX(-6deg);
+  }
 
-    &.lightgreen::after {
-        background-color: #a1f09a;
-        height: 25px;
-        transform: skewX(-8deg);
-    }
+  &.lightgreen::after {
+    background-color: #a1f09a;
+    height: 25px;
+    transform: skewX(-8deg);
+  }
 
-    &.blue::after {
-        background-color: #3aabff;
-        height: 30px;
-        transform: skewX(-10deg);
-    }
+  &.blue::after {
+    background-color: #3aabff;
+    height: 30px;
+    transform: skewX(-10deg);
+  }
 }
 
-
 @media only screen and (max-width: 1440px) {
-    .card {
-        max-width: 31%;
-    }
+  .card {
+    max-width: 31%;
+  }
 }
 
 @media only screen and (max-width: 830px) {
-    .services__cards {
-        flex-direction: column;
-        max-width: 100%;
-        gap: 20px !important;
-    }
+  .services__cards {
+    flex-direction: column;
+    max-width: 100%;
+    gap: 20px !important;
+  }
 
-    .card {
-        width: 100%;
-        flex-grow: 1;
-        flex-shrink: 1;
-        max-width: 100% !important;
-    }
+  .card {
+    width: 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    max-width: 100% !important;
+  }
 
-    .lightgreen {
-        width: 100%;
-        max-width: 100% !important;
-    }
+  .lightgreen {
+    width: 100%;
+    max-width: 100% !important;
+  }
 }

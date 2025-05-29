@@ -2,8 +2,16 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/image/logo.png";
 import "../assets/css/style.css";
+import { useLanguage } from "../context/LanguageContext";
 declare const bootstrap: any;
 const Header = () => {
+  const { language, setLanguage } = useLanguage();
+
+  const handleLanguageChange = () => {
+    setLanguage(language === "az" ? "en" : "az");
+  
+    console.log("Yeni dil:", language);
+  };
   const location = useLocation();
   const [, setIsOffcanvasVisible] = useState(false);
 
@@ -74,18 +82,13 @@ const Header = () => {
           </Link>
         </nav>
 
-        {/* <div className="header__search-container"> */}
-        {/* <i className="fa-solid fa-magnifying-glass header__search-icon"></i> */}
-        {/* <input
-            type="text"
-            className={`header__search-input ${searchVisible ? "visible" : ""}`}
-            placeholder="Search..."
-          /> */}
-        {/* <button className="header__search-button" >
-                        <i className={`fa-solid ${searchVisible ? 'fa-times' : 'fa-magnifying-glass'}`}></i>
-                    </button> */}
-        {/* </div> */}
-        <span className="header__lang">En</span>
+        <span
+          className="header__lang"
+          onClick={handleLanguageChange}
+          style={{ cursor: "pointer" }}
+        >
+          {language.toUpperCase()}
+        </span>
 
         <Link to="/contact" className="header__contact">
           BİZƏ YAZIN
@@ -99,7 +102,13 @@ const Header = () => {
           alignItems: "center",
         }}
       >
-        <span className="header__lang header__lang_en">En</span>
+        <span
+          className="header__lang header__lang_en"
+          onClick={handleLanguageChange}
+          style={{ cursor: "pointer" }}
+        >
+          {language.toUpperCase()}
+        </span>
         <div className="offcanvasForResponse">
           <button
             className="btn btn-primary offbtn"

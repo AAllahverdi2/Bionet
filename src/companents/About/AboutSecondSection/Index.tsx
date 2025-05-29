@@ -1,56 +1,39 @@
-import '../../../assets/css/style.css'
-import card1 from '../../../assets/image/image19.png'
-import image1 from '../../../assets/image/image20.png'
-import image2 from '../../../assets/image/image21.png'
-import image3 from '../../../assets/image/image22.png'
-const Index = () => {
-    return (
-        <div className='about-second-container container'>
-            <div className="about-second-all">
-                <div className="about-second-left">
-                    <h2>
-                        BİZİM MİSSİYAMIZ
-                    </h2>
-                    <p>
-                        Şirkətimiz, Bionet uzun illərdir ki, müştərilərinə yüksək keyfiyyətli veb-saytların hazırlanması xidmətini təklif edir. Müxtəlif sənaye sahələrində fəaliyyət göstərən müəssisələrlə əməkdaşlıq edərək, onların onlayn mövcudluğunu artırmağa və bizneslərini rəqəmsal dünyaya adaptasiya etməyə kömək edirik
-                    </p>
-                    <p>
-                        Şirkətimiz, Bionet uzun illərdir ki, müştərilərinə yüksək keyfiyyətli veb-saytların hazırlanması xidmətini təklif edir. Müxtəlif sənaye sahələrində fəaliyyət göstərən müəssisələrlə əməkdaşlıq edərək, onların onlayn mövcudluğunu artırmağa və bizneslərini rəqəmsal dünyaya adaptasiya etməyə kömək edirik
-                    </p>
-                    <p>
-                        Şirkətimiz, Bionet uzun illərdir ki, müştərilərinə yüksək keyfiyyətli veb-saytların hazırlanması xidmətini təklif edir. Müxtəlif sənaye sahələrində fəaliyyət göstərən müəssisələrlə əməkdaşlıq edərək, onların onlayn mövcudluğunu artırmağa və bizneslərini rəqəmsal dünyaya adaptasiya etməyə kömək edirik
-                    </p>
-                </div>
-                <div className="about-second-right">
-                    <img src={card1} alt="" />
-                </div>
-            </div>
+import "../../../assets/css/style.css";
+import { AboutData } from "../../../interface/site.interface";
 
-            <div className="about-section-bottom">
-                <div className="about-item">
-                    <div className="icon">
-                        <img src={image1} alt="Bazar Araşdırması" />
-                    </div>
-                    <div className="item-label">1. Bazar Araşdırması</div>
-                </div>
-
-                <div className="about-item">
-                    <div className="icon">
-                        <img src={image2} alt="UX/UI Dizayn" />
-                    </div>
-                    <div className="item-label">2. UX/UI Dizayn</div>
-                </div>
-
-                <div className="about-item">
-                    <div className="icon">
-                        <img src={image3} alt="Təhlil Verilməsi" />
-                    </div>
-                    <div className="item-label">3. Təhlil Verilməsi</div>
-                </div>
-            </div>
-        </div>
-
-    )
+interface Props {
+  aboutData: AboutData[];
 }
 
-export default Index
+const Index = ({ aboutData }: Props) => {
+  const data = aboutData[0];
+
+  return (
+    <div className="about-second-container container">
+      <div className="about-second-all">
+        <div className="about-second-left">
+          <h2>{data?.title}</h2>
+          <div dangerouslySetInnerHTML={{ __html: data?.description }} />
+        </div>
+        <div className="about-second-right">
+          <img src={data?.image} alt="Haqqımızda şəkil" />
+        </div>
+      </div>
+
+      <div className="about-section-bottom">
+        {data?.icons?.map((item, index) => (
+          <div className="about-item" key={index}>
+            <div className="icon">
+              <img src={item.icon} alt={item.title} />
+            </div>
+            <div className="item-label">
+              {index + 1}. {item.title}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Index;

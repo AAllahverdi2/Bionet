@@ -1,40 +1,47 @@
-import '../../../assets/css/style.css';
+import { useEffect, useState } from "react";
+import "../../../assets/css/style.css";
+import {
+  HomeServiceSectionData,
+  ServiceStatistic,
+} from "../../../interface/site.interface";
+import { HomeService } from "../../../services/home.service";
 
 const Index = () => {
+  const [activities, setActivities] = useState<HomeServiceSectionData[]>([]);
+  const [statistics, setStatics] = useState<ServiceStatistic[]>([]);
+  const colors = ["green", "purple", "blue", "orange"];
+
+  useEffect(() => {
+    HomeService.getHomeActivity().then((res) => {
+      setActivities([res.data.data]);
+      setStatics(res.data.data.statistics);
+    });
+  }, []);
   return (
     <section className="activity_all">
       <h2 className="activities__title">Fəaliyyətimiz</h2>
-      <div className='home-activity-color'>
+      <div className="home-activity-color">
         <div className="activities container">
           <div className="activities__wrapper">
-            <div className="activities__left">
-              <h3 className="activities__heading">Xidmətlərimizdən yararlanın</h3>
-              <p>
-                Fəaliyyətimiz müddətində çox sahibkarlarla işləyib, uğurlu layihələr ərsəyə gətirmişik.
-                Sizin üçün istədiyiniz vebsaytları və mobil tətbiqləri dizayn edirik.
-              </p>
-              <p>
-                Fəaliyyətimiz müddətində çox sahibkarlarla işləyib, uğurlu layihələr ərsəyə gətirmişik.
-                Sizin üçün istədiyiniz vebsaytları və mobil tətbiqləri dizayn edirik.
-              </p>
-            </div>
+            {activities.map((item, index) => {
+              return (
+                <div className="activities__left">
+                  <h3 className="activities__heading">{item.title}</h3>
+                  <p dangerouslySetInnerHTML={{ __html: item.description }}></p>
+                </div>
+              );
+            })}
+
             <div className="activities__right">
-              <div className="stat-box green">
-                <span>Təhlil verilmiş layihələr</span>
-                <strong>50+</strong>
-              </div>
-              <div className="stat-box purple">
-                <span>Müştəri məmnuniyyəti</span>
-                <strong>92%</strong>
-              </div>
-              <div className="stat-box blue">
-                <span>Komanda</span>
-                <strong>10+</strong>
-              </div>
-              <div className="stat-box orange">
-                <span>Bizim fəaliyyətimiz</span>
-                <strong>5 il+</strong>
-              </div>
+              {statistics.map((item, index) => (
+                <div
+                  className={`stat-box ${colors[index % colors.length]}`}
+                  key={index}
+                >
+                  <span>{item.title}</span>
+                  <strong>{item.value}</strong>
+                </div>
+              ))}
             </div>
           </div>
         </div>

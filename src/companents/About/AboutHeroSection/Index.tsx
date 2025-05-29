@@ -1,14 +1,21 @@
-import '../../../assets/css/style.css'
-const Index = () => {
-  return (
-    <div className='about-hero-all'>
-      <div className="container">
-        <h2>BİZ KİMİK</h2>
-        <p>Şirkətimiz, Bionet uzun illərdir ki, müştərilərinə yüksək keyfiyyətli veb-saytların hazırlanması xidmətini təklif edir. Müxtəlif sənaye sahələrində fəaliyyət göstərən müəssisələrlə əməkdaşlıq edərək, onların onlayn mövcudluğunu artırmağa və bizneslərini rəqəmsal dünyaya adaptasiya etməyə kömək edirik</p>
+import "../../../assets/css/style.css";
+import { AboutData } from "../../../interface/site.interface";
 
-      </div>
-    </div>
-  )
+interface Props {
+  aboutData: AboutData[];
 }
 
-export default Index
+const Index = ({ aboutData }: Props) => {
+  const hero = aboutData[0]; 
+
+  return (
+    <div className="about-hero-all">
+      <div className="container">
+        <h2>{hero?.hero_title}</h2>
+        <div dangerouslySetInnerHTML={{ __html: hero?.hero_description }} />
+      </div>
+    </div>
+  );
+};
+
+export default Index;

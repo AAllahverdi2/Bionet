@@ -207,10 +207,17 @@
   }
   .header__left img {
     max-width: 120px !important;
-    object-fit: contain;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .header__search-input::-moz-placeholder {
+    font-size: 12px;
   }
   .header__search-input::placeholder {
     font-size: 12px;
+  }
+  .header__search-input::-moz-placeholder i {
+    font-size: 12px !important;
   }
   .header__search-input::placeholder i {
     font-size: 12px !important;
@@ -392,7 +399,8 @@
 }
 .partners__logos img {
   height: 60px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   max-width: 160px;
 }
 
@@ -456,7 +464,8 @@
 .card__icon img {
   width: 40px;
   height: 40px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .card__title {
   font-size: 16px;
@@ -975,17 +984,14 @@
   margin-bottom: 15px;
 }
 .footer_all .footer_sides .footer_right .footer_right_workoffer .contact_form .form_row .input_container {
-  width: 100%;
-}
-.footer_all .footer_sides .footer_right .footer_right_workoffer .contact_form .form_row .input_container .error_msg {
-  color: red;
-  font-size: 13px;
+  width: 50%;
+  border: 3px solid red !important;
 }
 .footer_all .footer_sides .footer_right .footer_right_workoffer .contact_form .form_row input,
 .footer_all .footer_sides .footer_right .footer_right_workoffer .contact_form .form_row textarea {
   flex: 1;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid blue;
   border-radius: 4px;
   width: 100% !important;
   font-size: 14px;
@@ -1024,6 +1030,7 @@
   padding: 8px 12px;
   display: flex;
   align-items: center;
+  width: -moz-fit-content;
   width: fit-content;
   background: #fff;
 }
@@ -1185,12 +1192,12 @@
 
 .sevices-all-color {
   width: 100% !important;
-  background-color: #f2f5f7;
+  background-color: #F2F5F7;
   padding: 40px !important;
 }
 
 .services-all-contact {
-  background-color: #f2f5f7;
+  background-color: #F2F5F7;
   padding: 35px;
   min-height: 600px;
   display: flex;
@@ -1260,6 +1267,11 @@
 .quote-form .form-group .input-field .input:focus {
   border-color: #00d6b4;
 }
+.quote-form .form-group .input-field .input:not(:-moz-placeholder-shown) + label {
+  top: 10px;
+  font-size: 12px;
+  color: #00d6b4;
+}
 .quote-form .form-group .input-field .input:focus + label, .quote-form .form-group .input-field .input:not(:placeholder-shown) + label {
   top: 10px;
   font-size: 12px;
@@ -1273,10 +1285,6 @@
 }
 .quote-form .input-field label {
   padding: 8px;
-}
-.quote-form .input-field .errorMsg {
-  color: red;
-  font-size: 13px;
 }
 .quote-form .textarea {
   width: 100%;
@@ -1325,7 +1333,7 @@
     gap: 0px !important;
   }
   .services-all-contact {
-    background-color: #f2f5f7;
+    background-color: #F2F5F7;
     padding: 35px;
     min-height: 800px;
     display: flex;
@@ -1397,6 +1405,9 @@
     font-size: 12px;
     padding: 8px 10px;
   }
+  .input::-moz-placeholder {
+    font-size: 12px;
+  }
   .input::placeholder {
     font-size: 12px;
   }
@@ -1429,7 +1440,7 @@
 }
 
 .contact-header {
-  background-color: #587abc;
+  background-color: #587ABC;
   color: white;
   padding: 50px;
   padding-top: 100px;
@@ -1472,10 +1483,6 @@
 .contact-form .input-field {
   flex: 1 1 48%;
   margin-bottom: 20px;
-}
-.contact-form .input-field .errorMsg {
-  font-size: 13px;
-  color: red;
 }
 .contact-form label {
   font-size: 14px;
@@ -1547,7 +1554,8 @@
 .contact-info ul li img {
   width: 40px;
   height: 40px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   cursor: pointer;
   border-radius: 50%;
   background-color: white;
@@ -1564,7 +1572,8 @@
 .contact-info ul .social-icons img {
   width: 25px;
   height: 25px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   cursor: pointer;
   border-radius: 50%;
   background-color: white;
@@ -1731,7 +1740,7 @@
   }
 }
 .about-second-container {
-  background-color: #f0f0f0;
+  background-color: #F0F0F0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1744,7 +1753,7 @@
   display: flex;
   gap: 40px;
   justify-content: space-between;
-  background-color: #f0f0f0;
+  background-color: #F0F0F0;
   padding-top: 30px;
   position: relative;
   min-height: 800px;
@@ -1754,7 +1763,6 @@
 .about-second-left {
   padding-top: 50px;
   text-align: left;
-  width: 50%;
 }
 
 .about-second-left h2 {
@@ -1779,8 +1787,8 @@
   max-height: 400px;
   display: flex;
   justify-content: center;
-  width: 50%;
 }
+
 .about-second-right img {
   width: 100%;
   min-height: 600px;
@@ -1816,7 +1824,7 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background-color: #add8e6;
+  background-color: #ADD8E6;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1876,28 +1884,30 @@
     min-height: 240px;
     border-radius: 5px;
   }
-  .team-header {
-    margin-top: 50px;
-  }
 }
+/* Mobil telefonlar üçün (480px-dən aşağı) */
 @media only screen and (max-width: 480px) {
   .about-second-left {
     padding-top: 30px;
+    /* Mobil üçün paddingi azaldırıq */
   }
   .about-second-left h2 {
     font-size: 28px;
+    /* Başlıq ölçüsünü kiçildirik */
     margin-bottom: 15px;
   }
   .about-second-left p {
     font-size: 14px;
+    /* Paraqraf ölçüsünü kiçildirik */
     max-width: 90%;
+    /* Paraqrafın genişliyini azaldırıq */
   }
   .about-second-right img {
     max-height: 250px;
-    object-fit: contain !important;
+    /* Şəkilin hündürlüyünü azaldırıq */
   }
   .about-section-bottom {
-    top: 70%;
+    top: 85%;
     left: 50%;
     transform: translateX(-50%);
     gap: 10px;
@@ -1911,19 +1921,21 @@
   .icon img {
     width: 40px;
     height: 40px;
-    object-fit: contain;
   }
 }
+/* Daha kiçik ekranlar (320px-dən aşağı) */
 @media only screen and (max-width: 320px) {
   .about-second-left h2 {
     font-size: 24px;
+    /* Başlıq ölçüsünü daha da kiçiltirik */
     margin-bottom: 10px;
   }
   .about-second-left p {
     font-size: 12px;
+    /* Paraqraf ölçüsünü daha da kiçiltirik */
   }
   .about-section-bottom {
-    top: 70%;
+    top: 90%;
   }
   .about-item .icon {
     width: 50px;
@@ -2071,7 +2083,8 @@ a {
 .myProject-swiper-slide img {
   width: 100%;
   height: auto;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   border-radius: 12px;
 }
 
@@ -2103,7 +2116,8 @@ a {
 .myProject-hero-all-right-image img {
   width: 100%;
   height: auto;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   border-radius: 12px;
 }
 
@@ -2213,7 +2227,8 @@ p {
   width: 100%;
   height: auto;
   border-radius: 12px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .webProject-btn {
@@ -2326,7 +2341,8 @@ p {
   width: 100%;
   height: auto;
   border-radius: 12px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .mobileProject-btn {
@@ -2475,7 +2491,8 @@ p {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 12px;
 }
 
@@ -2543,7 +2560,8 @@ p {
 .products-tabs-bottom-right .swiper-slide img {
   width: 100%;
   height: auto;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   border-radius: 12px;
 }
 
@@ -2579,7 +2597,8 @@ p {
   .swiper-slide img {
     width: 100% !important;
     height: auto !important;
-    object-fit: contain;
+    -o-object-fit: contain;
+       object-fit: contain;
   }
   .products-tabs-bottom-left {
     width: 100%;
@@ -2670,6 +2689,4 @@ body {
   font-size: 18px !important;
   font-weight: 600;
   display: none;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

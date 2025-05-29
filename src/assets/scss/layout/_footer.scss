@@ -1,4 +1,5 @@
 .footer_all {
+  padding: 30px 30px 30px 30px;
   .footer_sides {
     display: flex;
     justify-content: space-between;
@@ -144,13 +145,21 @@
             display: flex;
             gap: 10px;
             margin-bottom: 15px;
-
+            .input_container {
+              width: 100%;
+              .error_msg {
+                color: red;
+                font-size: 13px;
+              }
+            }
             input,
             textarea {
               flex: 1;
+
               padding: 10px;
               border: 1px solid #ccc;
               border-radius: 4px;
+              width: 100% !important;
               font-size: 14px;
               background-color: #f0f0f0;
             }
