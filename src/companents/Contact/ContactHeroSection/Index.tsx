@@ -9,8 +9,12 @@ import image8 from "../../../assets/image/Capa 2.svg";
 import { useState } from "react";
 import { ContactService } from "../../../services/contact.service";
 import { toast } from "react-toastify";
+import { useSite } from "../../../context/SiteContext";
+import { SiteData } from "../../../interface/site.interface";
 
 const Index = () => {
+  const { data } = useSite() as { data: SiteData };
+
   const [formData, setFormData] = useState({
     name: "",
     surname: "",
@@ -31,12 +35,9 @@ const Index = () => {
     e.preventDefault();
     try {
       const res = await ContactService.PostContact(formData);
-      //   console.log("Göndərildi:", res.data);
       toast.success("Məlumatlarıniz uğurla göndərildi");
-      // istəsən burada alert və ya form reset əlavə edə bilərsən
     } catch (err: any) {
       setErrors(err.errors);
-      console.error("Xəta:", err);
     }
   };
 
@@ -61,22 +62,22 @@ const Index = () => {
           <form onSubmit={handleSubmit}>
             <div className="input-row">
               <div className="input-field">
-                <label htmlFor="firstName">Ad</label>
+                <label htmlFor="firstName">{data?.name}</label>
                 <input
                   id="name"
                   type="text"
-                  placeholder="Adınızı daxil edin"
+                  placeholder={data?.name_placeholder}
                   value={formData.name}
                   onChange={handleChange}
                 />
                 <p className="errorMsg">{errors.name}</p>
               </div>
               <div className="input-field">
-                <label htmlFor="lastName">Soyad</label>
+                <label htmlFor="lastName">{data?.surname}</label>
                 <input
                   id="surname"
                   type="text"
-                  placeholder="Soyadınızı daxil edin"
+                  placeholder={data?.surname_placeholder}
                   value={formData.surname}
                   onChange={handleChange}
                 />
@@ -85,22 +86,22 @@ const Index = () => {
             </div>
             <div className="input-row">
               <div className="input-field">
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email">{data?.email}</label>
                 <input
                   id="email"
                   type="email"
-                  placeholder="Emailinizi daxil edin"
+                  placeholder={data?.email_placeholder}
                   value={formData.email}
                   onChange={handleChange}
                 />
                 <p className="errorMsg">{errors.email}</p>
               </div>
               <div className="input-field">
-                <label htmlFor="phone">Telefon </label>
+                <label htmlFor="phone">{data?.phone_number} </label>
                 <input
                   id="phone_number"
                   type="text"
-                  placeholder="Telefon nömrənizi daxil edin"
+                  placeholder={data?.phone_number_placeholder}
                   value={formData.phone_number}
                   onChange={handleChange}
                 />
@@ -108,34 +109,34 @@ const Index = () => {
               </div>
             </div>
             <div className="input-field">
-              <label htmlFor="message">Mesaj</label>
+              <label htmlFor="message">{data?.message}</label>
               <textarea
                 id="message"
-                placeholder="Mesajınızı yazın......"
+                placeholder={data?.message_placeholder}
                 value={formData.message}
                 onChange={handleChange}
               ></textarea>
               <p className="errorMsg">{errors.message}</p>
             </div>
-            <button type="submit">Göndər</button>
+            <button type="submit">{data?.send_message}</button>
           </form>
         </div>
 
         <div className="contact-info">
-          <h3>Əlaqə məlumatları</h3>
+          <h3>{data?.contact_details}</h3>
           <ul>
             <li>
               <img src={image1} alt="Phone" />{" "}
-              <span>Bizə zəng edin: (+99412) 310 07 09</span>
+              <span>{data?.call_us}: (+99412) 310 07 09</span>
             </li>
             <li>
               <img src={image2} alt="Email" />{" "}
-              <span>Email: info@bionet.az</span>
+              <span>{data?.email}: info@bionet.az</span>
             </li>
             <li className="contact_smedia">
               <img src={image4} alt="Social Media" />
               <div className="contact_smedia_all">
-                <span className="social-label">Sosial media</span>
+                <span className="social-label">{data?.social_media}</span>
                 <div className="social-icons">
                   <img src={image8} alt="Facebook" />
                   <img src={image7} alt="Instagram" />
@@ -145,7 +146,7 @@ const Index = () => {
             </li>
             <li>
               <img src={image3} alt="Location" />{" "}
-              <span>Ünvan: Abbasqulu Ağa Bakıxanov küç, 92</span>
+              <span>{data?.address}: Abbasqulu Ağa Bakıxanov küç, 92</span>
             </li>
           </ul>
         </div>

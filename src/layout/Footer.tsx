@@ -10,10 +10,13 @@ import { ContactService } from "../services/contact.service";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useRef } from "react";
 import { toast } from "react-toastify";
-import { SettingsContactData } from "../interface/site.interface";
+import { SettingsContactData, SiteData } from "../interface/site.interface";
 import { SettingsService } from "../services/settings.service";
+import { useSite } from "../context/SiteContext";
 
 const Footer = () => {
+  const { data } = useSite() as { data: SiteData };
+
   const [formData, setFormData] = useState({
     name: "",
     surname: "",
@@ -56,7 +59,6 @@ const Footer = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("object");
     if (!isRecaptchaVerified || !recaptchaToken) {
       toast.error("Zəhmət olmazsa mən robot deyiləmi təsdiqləyin");
 
@@ -79,7 +81,6 @@ const Footer = () => {
       setRecaptchaToken(null);
       recaptchaRef.current?.reset();
     } catch (error: any) {
-      console.error("POST ERROR:", error);
 
       setErrors(error.errors);
     }
@@ -92,7 +93,7 @@ const Footer = () => {
           <img src={BionetLogo} alt="" />
           <div className="footer_right_connetion">
             <div className="contact_section">
-              <h4>ƏLAQƏ</h4>
+              <h4>{data?.contact}</h4>
               <div className="contact_item">
                 <img src={logo1} alt="Location" />
                 <span>{settings?.address}</span>
@@ -108,7 +109,7 @@ const Footer = () => {
             </div>
 
             <div className="follow_us_section">
-              <h4>BİZİ İZLƏYİN</h4>
+              <h4>{data?.follow_us}</h4>
               <div className="social_icons">
                 <a
                   href={settings?.instagram || "#"}
@@ -143,45 +144,57 @@ const Footer = () => {
             </div>
             <div className="footer_right_connetion">
               <div className="contact_section">
-                <h4 className="footer_connection_tag">ƏLAQƏ</h4>
+                <h4>{data?.contact}</h4>
                 <div className="contact_item">
                   <img src={logo1} alt="Location" />
-                  <span>Bakı, Nərimanov rayonu</span>
+                  <span>{settings?.address}</span>
                 </div>
                 <div className="contact_item">
                   <img src={logo2} alt="Phone" />
-                  <span>055 000 00 00</span>
+                  <span>{settings?.phone_number}</span>
                 </div>
                 <div className="contact_item">
                   <img src={logo3} alt="Email" />
-                  <span>mdhthesenzade@gmail.com</span>
+                  <span>{settings?.email}</span>
                 </div>
               </div>
 
               <div className="follow_us_section">
-                <h4 className="footer_connection_tag_watch">BİZİ İZLƏYİN</h4>
+                <h4>{data?.follow_us}</h4>
                 <div className="social_icons">
-                  <a href="#">
-                    <img src={image6} alt="Facebook" />
+                  <a
+                    href={settings?.instagram || "#"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src={image6} alt="Instagram" />
                   </a>
-                  <a href="#">
-                    <img src={image7} alt="Instagram" />
+                  <a
+                    href={settings?.youtube || "#"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src={image7} alt="youtube" />
                   </a>
-                  <a href="#">
-                    <img src={image8} alt="YouTube" />
+                  <a
+                    href={settings?.facebook || "#"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src={image8} alt="facebook" />
                   </a>
                 </div>
               </div>
             </div>
           </div>
           <div className="footer_right_workoffer">
-            <h4 className="section_title">BİZİMLƏ İŞLƏ</h4>
-            <p className="section_serives">Xidmətlərimiz</p>
+            <h4 className="section_title">{data?.work_with_us}</h4>
+            <p className="section_serives">{data?.services}</p>
             <div className="footer_services">
-              <div>UX/UI dizayn</div>
-              <div>Mobil tətbiqlərin və saytların yaradılması</div>
-              <div>Frond end development</div>
-              <div>Back end development</div>
+              <div>{data?.ux_ui_design}</div>
+              <div>{data?.mobile_app_and_website_development}</div>
+              <div> {data?.frontend_development}</div>
+              <div>{data?.backend_development}</div>
             </div>
 
             <form className="contact_form" onSubmit={handleSubmit}>
@@ -189,7 +202,7 @@ const Footer = () => {
                 <div className="input_container">
                   <input
                     type="text"
-                    placeholder="Ad"
+                    placeholder={data?.name}
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
@@ -200,7 +213,7 @@ const Footer = () => {
                 <div className="input_container">
                   <input
                     type="text"
-                    placeholder="Soyad"
+                    placeholder={data?.surname}
                     name="surname"
                     value={formData.surname}
                     onChange={handleChange}
@@ -212,7 +225,7 @@ const Footer = () => {
                 <div className="input_container">
                   <input
                     type="text"
-                    placeholder="Telefon nömrəsi"
+                    placeholder={data?.phone_number}
                     name="phone_number"
                     value={formData.phone_number}
                     onChange={handleChange}
@@ -224,7 +237,7 @@ const Footer = () => {
                 <div className="input_container">
                   <input
                     type="email"
-                    placeholder="Email"
+                    placeholder={data?.email}
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
@@ -236,7 +249,7 @@ const Footer = () => {
               <div className="form_row">
                 <div className="input_container">
                   <textarea
-                    placeholder="Layihənin detalları"
+                    placeholder={data?.detail_of_project}
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
@@ -257,7 +270,7 @@ const Footer = () => {
                 className="submit_button"
                 // disabled={!isRecaptchaVerified}
               >
-                GÖNDƏR
+                {data?.send_message}
               </button>
             </form>
           </div>

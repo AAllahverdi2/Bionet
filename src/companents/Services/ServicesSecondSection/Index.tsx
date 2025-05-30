@@ -2,9 +2,12 @@ import { useState } from "react";
 import "../../../assets/css/style.css";
 import { ServicesService } from "../../../services/service.service";
 import { toast } from "react-toastify";
-// import { ServicesService } from '../../../services/services.service';
+import { useSite } from "../../../context/SiteContext";
+import { SiteData } from "../../../interface/site.interface";
 
 const Index = () => {
+  const { data } = useSite() as { data: SiteData };
+
   const [formData, setFormData] = useState({
     fullName: "",
     phoneNumber: "",
@@ -41,11 +44,9 @@ const Index = () => {
       };
 
       const res = await ServicesService.PostPriceOffer(payload);
-      console.log("Form göndərildi:", res.data);
       // alert("Form uğurla göndərildi!");
       toast.success("Müraciətiniz uğurla göndərildi");
     } catch (err: any) {
-      console.log(err);
       setErrors(err.errors);
     }
   };
@@ -54,20 +55,17 @@ const Index = () => {
     <div className="sevices-all-color">
       <div className="container services-all-contact">
         <div className="quote-form">
-          <h2 className="title">Qiymət təklifi</h2>
-          <p className="subtitle">
-            Vebsayt və ya mobil tətbiq üçün dizayn qiymətinin hesablanması
-            istəyirsinizsə bizə yazın və qiymət təklifi alın
-          </p>
+          <h2 className="title">{data?.price_offer}</h2>
+          <p className="subtitle">{data?.price_offer_description}</p>
 
           <form className="form" onSubmit={handleSubmit}>
             <div className="form-group">
               <div className="input-field">
-                <label htmlFor="fullName">Adınızı və soyadınız</label>
+                <label htmlFor="fullName">{data?.name_surname}</label>
                 <input
                   id="fullName"
                   type="text"
-                  placeholder="Adınızı və soyadınızı daxil edin"
+                  placeholder={data?.name_surname_placeholder}
                   className="input"
                   value={formData.fullName}
                   onChange={handleChange}
@@ -75,11 +73,11 @@ const Index = () => {
                 <p className="errorMsg">{errors.full_name}</p>
               </div>
               <div className="input-field">
-                <label htmlFor="phoneNumber">Əlaqə nömrəniz</label>
+                <label htmlFor="phoneNumber">{data?.contact_number}</label>
                 <input
                   id="phoneNumber"
                   type="number"
-                  placeholder="Əlaqə nömrənizi daxil edin"
+                  placeholder={data?.contact_number}
                   className="input"
                   value={formData.phoneNumber}
                   onChange={handleChange}
@@ -88,18 +86,18 @@ const Index = () => {
               </div>
             </div>
             <div className="input-field">
-              <label htmlFor="productInfo">Məhsul haqqında</label>
+              <label htmlFor="productInfo">{data?.product_about}</label>
               <textarea
                 id="productInfo"
                 className="textarea"
-                placeholder="Məhsul haqqında"
+                placeholder={data?.product_about}
                 value={formData.productInfo}
                 onChange={handleChange}
               />
               <p className="errorMsg"> {errors.product_info}</p>
             </div>
             <button type="submit" className="submit-buttonn">
-              Göndər
+              {data?.send_message}
             </button>
           </form>
         </div>

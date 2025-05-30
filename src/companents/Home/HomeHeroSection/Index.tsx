@@ -4,16 +4,19 @@ import { Link } from "react-router";
 import {
   HomeHeraDataType,
   PartnersDataType,
+  SiteData,
 } from "../../../interface/site.interface";
 import { HomeService } from "../../../services/home.service";
 import { useLanguage } from "../../../context/LanguageContext";
+import { useSite } from "../../../context/SiteContext";
 const Index = () => {
-    const { language } = useLanguage();
+  const { language } = useLanguage();
+  const { data } = useSite() as { data: SiteData };
 
   const [heroData, setHeroData] = useState<HomeHeraDataType[]>([]);
   const [partners, setpartners] = useState<PartnersDataType[]>([]);
   useEffect(() => {
-    HomeService.getHomeHero(language).then((res) => {
+    HomeService.getHomeHero().then((res) => {
       setHeroData([res.data.data]);
     });
     HomeService.getPartners().then((res) => {
@@ -30,7 +33,12 @@ const Index = () => {
                 <h1 className="hero__title">
                   {item.title.split(" ").map((word, idx) => {
                     const cleanWord = word.replace(",", "").toLowerCase();
-                    const highlightWords = ["nəsil", "həllər"];
+                    const highlightWords = [
+                      "nəsil",
+                      "həllər",
+                      "generation",
+                      "solutions",
+                    ];
                     const isHighlighted = highlightWords.includes(cleanWord);
                     return (
                       <span
@@ -70,12 +78,8 @@ const Index = () => {
           </div> */}
 
           <div className="partners" id="partners">
-            <h2 className="partners__title">Partnyorlar</h2>
-            <p className="partners__desc">
-              Helping leaders to create and transform products, brand
-              experiences, and <br />
-              customer relationships.
-            </p>
+            <h2 className="partners__title">{data?.partners}</h2>
+            <p className="partners__desc">{data?.partners_description}</p>
             <div className="partners__logos">
               {partners.map((item, indx) => {
                 return <img src={item.logo} alt="" />;

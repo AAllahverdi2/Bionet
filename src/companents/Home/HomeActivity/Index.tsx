@@ -3,10 +3,16 @@ import "../../../assets/css/style.css";
 import {
   HomeServiceSectionData,
   ServiceStatistic,
+  SiteData,
 } from "../../../interface/site.interface";
 import { HomeService } from "../../../services/home.service";
+import { useLanguage } from "../../../context/LanguageContext";
+import { useSite } from "../../../context/SiteContext";
 
 const Index = () => {
+  const { language } = useLanguage();
+  const { data } = useSite() as { data: SiteData };
+
   const [activities, setActivities] = useState<HomeServiceSectionData[]>([]);
   const [statistics, setStatics] = useState<ServiceStatistic[]>([]);
   const colors = ["green", "purple", "blue", "orange"];
@@ -16,10 +22,10 @@ const Index = () => {
       setActivities([res.data.data]);
       setStatics(res.data.data.statistics);
     });
-  }, []);
+  }, [language]);
   return (
     <section className="activity_all">
-      <h2 className="activities__title">Fəaliyyətimiz</h2>
+      <h2 className="activities__title">{data?.activity}</h2>
       <div className="home-activity-color">
         <div className="activities container">
           <div className="activities__wrapper">

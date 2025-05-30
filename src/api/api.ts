@@ -13,7 +13,8 @@ $api = (service: string, params?: { [key: string]: any }): string => {
     post_PriceOffer: "price-offer",
     get_settings: "setting",
     get_Services: "service",
-    get_Portpolio:"portfolios"
+    get_Portpolio: "portfolios",
+    get_siteText: "site-texts",
   };
   if (typeof services[service] === "string") {
     services[service] = { path: String(services[service]) };

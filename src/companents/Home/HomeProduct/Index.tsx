@@ -4,23 +4,27 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 import { Navigation } from "swiper";
 import image1 from "../../../assets/image/image18.png";
-import { HomeProducts } from "../../../interface/site.interface";
+import { HomeProducts, SiteData } from "../../../interface/site.interface";
 import { HomeService } from "../../../services/home.service";
+import { useLanguage } from "../../../context/LanguageContext";
+import { useSite } from "../../../context/SiteContext";
 
 const Index = () => {
+  const { language } = useLanguage();
+  const { data } = useSite() as { data: SiteData };
+
   const [activeTab, setActiveTab] = useState(0);
   const [products, setProducts] = useState<HomeProducts[]>([]);
 
   useEffect(() => {
     HomeService.getHomeProducts().then((res) => {
-      console.log("products", res.data.data);
       setProducts(res.data.data);
     });
-  }, []);
+  }, [language]);
 
   return (
     <div className="product-tabs container">
-      <h2 className="product-tabs__title">Məhsullarımız</h2>
+      <h2 className="product-tabs__title">{data?.our_products}</h2>
       <div className="product-tabs__buttons">
         {products?.map((tab, index) => (
           <button

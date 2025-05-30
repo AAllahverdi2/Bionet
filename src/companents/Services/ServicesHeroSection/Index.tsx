@@ -1,27 +1,27 @@
 import "../../../assets/css/style.css";
 import "../../../assets/css/style.css";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
-
 import { Navigation } from "swiper";
-
-import image1 from "../../../assets/image/image18.png";
 import { useEffect, useState } from "react";
 import { ServicesService } from "../../../services/service.service";
-import { ServicesDataType } from "../../../interface/site.interface";
+import { ServicesDataType, SiteData } from "../../../interface/site.interface";
+import { useLanguage } from "../../../context/LanguageContext";
+import { useSite } from "../../../context/SiteContext";
 const Index = () => {
+  const { language } = useLanguage();
+  const { data } = useSite() as { data: SiteData };
+
   const [service, setService] = useState<ServicesDataType | null>(null);
   useEffect(() => {
     ServicesService.getServices().then((res) => {
-      console.log(res.data);
       setService(res.data.data);
     });
-  }, []);
+  }, [language]);
   return (
     <div className="services-hero-all container">
       <div className="services-hero-title">
-        <h2>Xidmətlərimiz</h2>
+        <h2>{data?.services}</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam sunt
           dicta nihil delectus, praesentium quam sequi eaque inventore!

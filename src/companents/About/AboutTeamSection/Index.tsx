@@ -1,8 +1,12 @@
 import '../../../assets/css/style.css';
+import { useSite } from '../../../context/SiteContext';
+import { SiteData } from '../../../interface/site.interface';
 // import teamMember1 from '../../../assets/image/ellipse1.png'; // Şəkil yolu
 // import teamMember2 from '../../../assets/image/ellipse2.png'; // Şəkil yolu
 
 const Index = () => {
+      const { data } = useSite() as { data: SiteData };
+    
     return (
         <section className='team-all'>
             <div className="team-container container">

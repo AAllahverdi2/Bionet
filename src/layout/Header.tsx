@@ -3,15 +3,18 @@ import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/image/logo.png";
 import "../assets/css/style.css";
 import { useLanguage } from "../context/LanguageContext";
+import { useSite } from "../context/SiteContext";
+import { SiteData } from "../interface/site.interface";
 declare const bootstrap: any;
 const Header = () => {
+  const { data } = useSite() as { data: SiteData };
+
   const { language, setLanguage } = useLanguage();
 
-  const handleLanguageChange = () => {
-    setLanguage(language === "az" ? "en" : "az");
-  
-    console.log("Yeni dil:", language);
-  };
+  // const handleLanguageChange = () => {
+  //   setLanguage(language === "az" ? "en" : "az");
+
+  // };
   const location = useLocation();
   const [, setIsOffcanvasVisible] = useState(false);
 
@@ -60,38 +63,40 @@ const Header = () => {
             to="/projects"
             className={location.pathname === "/projects" ? "active" : ""}
           >
-            Layihələrimiz
+            {data?.portfolio}
           </Link>
           <Link
             to="/services"
             className={location.pathname === "/services" ? "active" : ""}
           >
-            Xidmətlərimiz
+            {data?.services}
           </Link>
           <Link
             to="/about"
             className={location.pathname === "/about" ? "active" : ""}
           >
-            Haqqımızda
+            {data?.about}
           </Link>
           <Link
             to="/contact"
             className={location.pathname === "/contact" ? "active" : ""}
           >
-            Əlaqə
+            {data?.contact}
           </Link>
         </nav>
 
-        <span
+        <select
+          value={language}
+          onChange={(e) => setLanguage(e.target.value)}
           className="header__lang"
-          onClick={handleLanguageChange}
           style={{ cursor: "pointer" }}
         >
-          {language.toUpperCase()}
-        </span>
+          <option value="az">AZ</option>
+          <option value="en">EN</option>
+        </select>
 
         <Link to="/contact" className="header__contact">
-          BİZƏ YAZIN
+          {data?.write_to_us}
         </Link>
       </div>
 
@@ -102,13 +107,15 @@ const Header = () => {
           alignItems: "center",
         }}
       >
-        <span
+        <select
+          value={language}
+          onChange={(e) => setLanguage(e.target.value)}
           className="header__lang header__lang_en"
-          onClick={handleLanguageChange}
           style={{ cursor: "pointer" }}
         >
-          {language.toUpperCase()}
-        </span>
+          <option value="az">AZ</option>
+          <option value="en">EN</option>
+        </select>
         <div className="offcanvasForResponse">
           <button
             className="btn btn-primary offbtn"
@@ -144,7 +151,7 @@ const Header = () => {
                   location.pathname === "/projects" ? "activeForOffcanvas" : ""
                 }
               >
-                Layihələrimiz
+                {data?.portfolio}
               </Link>
               <hr />
               <Link
@@ -154,7 +161,7 @@ const Header = () => {
                   location.pathname === "/services" ? "activeForOffcanvas" : ""
                 }
               >
-                Xidmətlərimiz
+                {data?.services}
               </Link>
               <hr />
               <Link
@@ -164,7 +171,7 @@ const Header = () => {
                   location.pathname === "/about" ? "activeForOffcanvas" : ""
                 }
               >
-                Haqqımızda
+                {data?.about}
               </Link>
               <hr />
               <Link
@@ -174,7 +181,7 @@ const Header = () => {
                   location.pathname === "/contact" ? "activeForOffcanvas" : ""
                 }
               >
-                Əlaqə
+                {data?.contact}
               </Link>
               <hr />
               <Link
@@ -182,7 +189,7 @@ const Header = () => {
                 className="header__contact btn-response"
                 onClick={closeOffcanvas}
               >
-                BİZƏ YAZIN
+                {data?.write_to_us}
               </Link>
             </div>
           </div>

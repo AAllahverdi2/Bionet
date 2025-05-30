@@ -12,11 +12,7 @@ export const ServicesService = {
   },
    async getServices() {
     let response = await $axios
-      .get($api("get_Services"), {
-        headers: {
-          "Accept-Language": "az",
-        },
-      })
+      .get($api("get_Services"), )
       .catch((err) => {
         return err.response;
       });

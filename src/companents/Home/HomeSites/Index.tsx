@@ -3,9 +3,17 @@ import "../../../assets/css/style.css";
 import card1 from "../../../assets/image/image15.png";
 import card2 from "../../../assets/image/image16.png";
 import card3 from "../../../assets/image/image17.png";
-import { HomeWebDevelopmentDataType } from "../../../interface/site.interface";
+import {
+  HomeWebDevelopmentDataType,
+  SiteData,
+} from "../../../interface/site.interface";
 import { HomeService } from "../../../services/home.service";
+import { useLanguage } from "../../../context/LanguageContext";
+import { useSite } from "../../../context/SiteContext";
 const Index = () => {
+  const { language } = useLanguage();
+  const { data } = useSite() as { data: SiteData };
+
   const [webDevelopment, setWebDevelopment] = useState<
     HomeWebDevelopmentDataType[]
   >([]);
@@ -13,11 +21,11 @@ const Index = () => {
     HomeService.getHomeDevelopMent().then((res) => {
       setWebDevelopment(res.data.data);
     });
-  }, []);
+  }, [language]);
   return (
     <section className="web-all">
       <div className="web-dev container">
-        <h2 className="web-dev__title">Vebsaytların hazırlanması</h2>
+        <h2 className="web-dev__title">{data?.web_dev}</h2>
         <div className="web-dev__wrapper">
           {webDevelopment.map((item, index) => {
             return (

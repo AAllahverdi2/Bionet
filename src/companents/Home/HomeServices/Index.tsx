@@ -3,9 +3,15 @@ import card2 from "../../../assets/image/image14.png";
 import card3 from "../../../assets/image/image12.png";
 import "../../../assets/css/style.css";
 import { useEffect, useState } from "react";
-import { HomeServicesDataType } from "../../../interface/site.interface";
+import { HomeServicesDataType, SiteData } from "../../../interface/site.interface";
 import { HomeService } from "../../../services/home.service";
+import { useLanguage } from "../../../context/LanguageContext";
+import { data } from "react-router";
+import { useSite } from "../../../context/SiteContext";
 const Index = () => {
+  const { language } = useLanguage();
+  const { data } = useSite() as { data: SiteData };
+
   const [homeServices, setHomeServices] = useState<HomeServicesDataType[]>([]);
   const colorClasses = ["green", "lightgreen", "blue"];
 
@@ -13,18 +19,15 @@ const Index = () => {
     HomeService.getHomeServices().then((res) => {
       setHomeServices(res.data.data);
     });
-  }, []);
+  }, [language]);
   return (
     <section className="services ">
       <div className="container">
         <div className="row">
           <div className="services__top">
-            <h2 className="services__title">Xidmətlərimiz</h2>
+            <h2 className="services__title">{data?.services}</h2>
             <p className="services__desc">
-              Fəaliyyətimiz müddətində çox sahibkarlarla işləyib, uğurlu
-              layihələr ərsəyə gətirmişik. <br />
-              Sizin üçün istədiyiniz vebsaytları və mobil tətbiqləri dizayn
-              edirik.
+             {data?.services_description}
             </p>
           </div>
 

@@ -5,21 +5,23 @@ import AboutTeamSection from "../companents/About/AboutTeamSection/Index";
 import { Helmet } from "react-helmet";
 import { AboutService } from "../services/about.service";
 import { AboutData } from "../interface/site.interface";
+import { useLanguage } from "../context/LanguageContext";
 
 const About = () => {
+  const { language } = useLanguage();
+
   const [aboutData, setAboutData] = useState<AboutData[]>([]);
   useEffect(() => {
     AboutService.getAboutData().then((res) => {
-      console.log([res.data.data]);
-      setAboutData([res.data.data])
+      setAboutData([res.data.data]);
     });
-  }, []);
+  }, [language]);
   return (
     <div>
       <Helmet>
         <title>Haqqimizda</title>
       </Helmet>
-      <AboutHerosection  aboutData={aboutData}/>
+      <AboutHerosection aboutData={aboutData} />
       <AboutSecondsection aboutData={aboutData} />
       <AboutTeamSection />
     </div>
