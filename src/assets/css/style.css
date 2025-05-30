@@ -1895,7 +1895,6 @@
   }
   .about-second-right img {
     max-height: 250px;
-    object-fit: contain !important;
   }
   .about-section-bottom {
     top: 70%;
@@ -1906,11 +1905,12 @@
     padding: 10px;
   }
   .about-item .icon {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
   }
   .icon img {
-    width: 40px;
+    width: 50px;
     height: 40px;
     object-fit: contain;
   }
@@ -1927,8 +1927,9 @@
     top: 70%;
   }
   .about-item .icon {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
   }
   .icon img {
     width: 35px;

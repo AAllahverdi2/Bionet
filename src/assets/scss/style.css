@@ -55,6 +55,7 @@
 .header__lang {
   font-size: 14px;
   color: #333;
+  border: none !important;
 }
 
 .header__lang_en {
@@ -984,14 +985,17 @@
   margin-bottom: 15px;
 }
 .footer_all .footer_sides .footer_right .footer_right_workoffer .contact_form .form_row .input_container {
-  width: 50%;
-  border: 3px solid red !important;
+  width: 100%;
+}
+.footer_all .footer_sides .footer_right .footer_right_workoffer .contact_form .form_row .input_container .error_msg {
+  color: red;
+  font-size: 13px;
 }
 .footer_all .footer_sides .footer_right .footer_right_workoffer .contact_form .form_row input,
 .footer_all .footer_sides .footer_right .footer_right_workoffer .contact_form .form_row textarea {
   flex: 1;
   padding: 10px;
-  border: 1px solid blue;
+  border: 1px solid #ccc;
   border-radius: 4px;
   width: 100% !important;
   font-size: 14px;
@@ -1192,12 +1196,12 @@
 
 .sevices-all-color {
   width: 100% !important;
-  background-color: #F2F5F7;
+  background-color: #f2f5f7;
   padding: 40px !important;
 }
 
 .services-all-contact {
-  background-color: #F2F5F7;
+  background-color: #f2f5f7;
   padding: 35px;
   min-height: 600px;
   display: flex;
@@ -1286,6 +1290,10 @@
 .quote-form .input-field label {
   padding: 8px;
 }
+.quote-form .input-field .errorMsg {
+  color: red;
+  font-size: 13px;
+}
 .quote-form .textarea {
   width: 100%;
   padding: 12px 15px;
@@ -1333,7 +1341,7 @@
     gap: 0px !important;
   }
   .services-all-contact {
-    background-color: #F2F5F7;
+    background-color: #f2f5f7;
     padding: 35px;
     min-height: 800px;
     display: flex;
@@ -1440,7 +1448,7 @@
 }
 
 .contact-header {
-  background-color: #587ABC;
+  background-color: #587abc;
   color: white;
   padding: 50px;
   padding-top: 100px;
@@ -1483,6 +1491,10 @@
 .contact-form .input-field {
   flex: 1 1 48%;
   margin-bottom: 20px;
+}
+.contact-form .input-field .errorMsg {
+  font-size: 13px;
+  color: red;
 }
 .contact-form label {
   font-size: 14px;
@@ -1740,7 +1752,7 @@
   }
 }
 .about-second-container {
-  background-color: #F0F0F0;
+  background-color: #f0f0f0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1753,7 +1765,7 @@
   display: flex;
   gap: 40px;
   justify-content: space-between;
-  background-color: #F0F0F0;
+  background-color: #f0f0f0;
   padding-top: 30px;
   position: relative;
   min-height: 800px;
@@ -1763,6 +1775,7 @@
 .about-second-left {
   padding-top: 50px;
   text-align: left;
+  width: 50%;
 }
 
 .about-second-left h2 {
@@ -1787,8 +1800,8 @@
   max-height: 400px;
   display: flex;
   justify-content: center;
+  width: 50%;
 }
-
 .about-second-right img {
   width: 100%;
   min-height: 600px;
@@ -1824,7 +1837,7 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background-color: #ADD8E6;
+  background-color: #add8e6;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1884,30 +1897,27 @@
     min-height: 240px;
     border-radius: 5px;
   }
+  .team-header {
+    margin-top: 50px;
+  }
 }
-/* Mobil telefonlar üçün (480px-dən aşağı) */
 @media only screen and (max-width: 480px) {
   .about-second-left {
     padding-top: 30px;
-    /* Mobil üçün paddingi azaldırıq */
   }
   .about-second-left h2 {
     font-size: 28px;
-    /* Başlıq ölçüsünü kiçildirik */
     margin-bottom: 15px;
   }
   .about-second-left p {
     font-size: 14px;
-    /* Paraqraf ölçüsünü kiçildirik */
     max-width: 90%;
-    /* Paraqrafın genişliyini azaldırıq */
   }
   .about-second-right img {
     max-height: 250px;
-    /* Şəkilin hündürlüyünü azaldırıq */
   }
   .about-section-bottom {
-    top: 85%;
+    top: 70%;
     left: 50%;
     transform: translateX(-50%);
     gap: 10px;
@@ -1915,27 +1925,26 @@
     padding: 10px;
   }
   .about-item .icon {
-    width: 60px;
-    height: 60px;
-  }
-  .icon img {
     width: 40px;
     height: 40px;
   }
+  .icon img {
+    width: 20px;
+    height: 40px;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
 }
-/* Daha kiçik ekranlar (320px-dən aşağı) */
 @media only screen and (max-width: 320px) {
   .about-second-left h2 {
     font-size: 24px;
-    /* Başlıq ölçüsünü daha da kiçiltirik */
     margin-bottom: 10px;
   }
   .about-second-left p {
     font-size: 12px;
-    /* Paraqraf ölçüsünü daha da kiçiltirik */
   }
   .about-section-bottom {
-    top: 90%;
+    top: 70%;
   }
   .about-item .icon {
     width: 50px;
